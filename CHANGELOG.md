@@ -1,1 +1,23 @@
-RELEASE 1.0.0
+# Change Log
+
+All notable changes to the "nestjs" extension will be documented in this file.
+
+Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+
+
+## 1.0.0 (2019-09-05)
+
+- Test Release
+
+## 1.0.1 (2019-09-06)
+
+### Added
+- Automatic confirm data parsing
+- An error is thrown, if key doesn't exist
+
+### Changed
+
+- Path resolution bug was fixed
+
+
+
