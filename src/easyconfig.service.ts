@@ -42,4 +42,4 @@ export class EasyconfigService {
   }
 }
 
-console.log(new EasyconfigService().get('TEST'));
+//console.log(new EasyconfigService().get('TEST'));
