@@ -23,7 +23,6 @@ export class EasyconfigService {
     } else {
       return val;
     }
-
   }
 }
 
