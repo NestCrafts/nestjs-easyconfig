@@ -4,7 +4,7 @@ import { Config } from './config.interface';
 
 @Module({})
 export class EasyconfigModule {
-  static register(options: Config): DynamicModule {
+  static register(options?: Config): DynamicModule {
     return {
       module: EasyconfigModule,
       providers: [
