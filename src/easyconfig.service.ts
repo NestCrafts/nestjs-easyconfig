@@ -4,14 +4,17 @@ import { Config } from './config.interface';
 import * as path from 'path';
 
 export class EasyconfigService {
-  private readonly envConfig: { [key: string]: string };
+  readonly envConfig: { [key: string]: string };
 
   constructor(filePath: Config) {
-    this.envConfig = dotenv.parse(fs.readFileSync(filePath.path));
+    this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(filePath.path)));
   }
 
   get(key: string): any {
     const val = this.envConfig[key];
+    if (!val) {
+      throw new Error('The key was not found in config file :(');
+    }
 
     if (/^\d+$/.test(val)) {
       return Number(val);
@@ -20,5 +23,8 @@ export class EasyconfigService {
     } else {
       return val;
     }
+
   }
 }
+
+// console.log(new EasyconfigService({path: '.env'}).get('TEST'))
