@@ -14,18 +14,18 @@
  
 ## Description
 
-[Nest-easyconfigs](https://github.com/rubiin/nest-easyconfigs)  loads configs from your .env (Wraps dotenv module)
+[Nestjs-easyconfig](https://github.com/rubiin/nestjs-easyconfig)  loads configs from your .env (Wraps dotenv module)
 
 ## Installation
 
 ```bash
-$ npm install nest-easyconfigs
+$ npm install nestjs-easyconfig
 ```
 
 ## Usage
 ```javascript
 import  { Module }  from  '@nestjs/common';
-import { EasyconfigModule } from  'nest-easyconfigs';
+import { EasyconfigModule } from  'nestjs-easyconfig';
 
 @Module({
  imports:  [EasyconfigModule.register({path: './config/.env'})],
