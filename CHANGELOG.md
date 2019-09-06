@@ -19,5 +19,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Path resolution bug was fixed
 
+## 1.1.0 (2019-09-08)
+
+### Added
+- New feature to detect env based on NODE_ENV process variable
+
+### Changed
+
+- console output repalced with debug module
+
 
 
