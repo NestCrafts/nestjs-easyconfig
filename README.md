@@ -42,3 +42,8 @@ export  class  AppModule  {}
 ## License
 
   The package is [MIT licensed](LICENSE).
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/rubiin/nest-easyconfigs/badge.svg?style=beer-square)](https://beerpay.io/rubiin/nest-easyconfigs)  [![Beerpay](https://beerpay.io/rubiin/nest-easyconfigs/make-wish.svg?style=flat-square)](https://beerpay.io/rubiin/nest-easyconfigs?focus=wish)
