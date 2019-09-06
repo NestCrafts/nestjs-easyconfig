@@ -28,5 +28,19 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - console output repalced with debug module
 
+# 1.1.1 (2019-09-08)
+
+### Changed
+
+- fixed a small bug
+
+# 1.1.2 (2019-09-08)
+
+
+### Changed
+
+- updated readme
+
+
 
 
