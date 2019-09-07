@@ -14,7 +14,7 @@
  
 ## Description
 
-[Nestjs-easyconfig](https://github.com/rubiin/nestjs-easyconfig)  loads configs from your .env (Wraps dotenv module) ⚙️ 🔥 
+[Nestjs-easyconfig](https://github.com/rubiin/nestjs-easyconfig)  loads configs from your `.env` (Wraps dotenv module) ⚙️ 🔥 
 
 ## Installation
 
@@ -43,8 +43,10 @@ import { EasyconfigModule } from  'nestjs-easyconfig';
 })
 export  class  AppModule  {}
 ```
-In this case, you have to pass in the <b>NODE_ENV</b> value and the .env file to read will be determined accordingly.
-For example, <b>NODE_ENV=dev</b> will make the app read <b>.env.dev</b>
+In this case, you have to pass in the <b>NODE_ENV</b> value and the `.env` file to read will be determined accordingly.
+Loads environment variables from `.env.[development|test|production][.local]` files
+For example, <b>NODE_ENV=dev</b> will make the app read `.env.dev`
+
 
 > Note: The .env file also has to be in root folder
 

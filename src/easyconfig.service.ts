@@ -1,14 +1,15 @@
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
-import { Config } from './config.interface';
+import { FileConfig } from './fileconfig.interface';
 import * as path from 'path';
 import * as debug from 'debug';
 
 export class EasyconfigService {
   readonly envConfig: { [key: string]: string };
   readonly errorLog = debug('warning');
+  readonly sampleFile: string = '.env.sample';
 
-  constructor(filePath?: Config) {
+  constructor(filePath?: FileConfig) {
     debug.enable('warning');
 
     if (!filePath && process.env.NODE_ENV) {
@@ -23,6 +24,7 @@ export class EasyconfigService {
         fs.readFileSync(path.resolve(filePath.path)),
       );
     }
+    this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
   }
 
   get(key: string): any {
@@ -40,6 +42,24 @@ export class EasyconfigService {
       return val;
     }
   }
+
+  /**
+   *  checks whether the used env file missed some keys
+   */
+
+  safeCheck = (userEnvFile, filepath) => {
+    const src = Object.keys(
+      dotenv.parse(fs.readFileSync(path.resolve(filepath))),
+    );
+    const missingKeys = src
+      .filter(x => !userEnvFile.includes(x))
+      .concat(userEnvFile.filter(x => !src.includes(x)));
+
+    this
+      .errorLog(`MissingEnvVarsError: ${missingKeys} were defined in .env.example but are not present in the environment:
+        Make sure to add them to the environment.`);
+  }
 }
 
-//console.log(new EasyconfigService().get('TEST'));
+
+//console.log(new EasyconfigService());
