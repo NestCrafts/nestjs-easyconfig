@@ -31,7 +31,7 @@
   "bugs": "",
   "dependencies": {
     "dotenv": "^8.1.0",
-    "reflect-metadata": "0.1.12",
+    "reflect-metadata": "0.1.13",
     "rxjs": "^6.3.3"
   },
   "peerDependencies": {
@@ -43,10 +43,10 @@
     "@nestjs/platform-express": "^6.0.0",
     "@nestjs/testing": "6.1.1",
     "@types/express": "4.16.1",
-    "@types/jest": "24.0.11",
-    "@types/node": "12.7.4",
+    "@types/jest": "24.0.18",
+    "@types/node": "11.13.4",
     "@types/supertest": "2.0.7",
-    "jest": "24.7.1",
+    "jest": "24.9.0",
     "prettier": "1.17.0",
     "rimraf": "^2.6.2",
     "supertest": "4.0.2",
