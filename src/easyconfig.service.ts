@@ -58,7 +58,7 @@ export class EasyconfigService {
       this.logger.error(`MissingEnvVarsError: ${missingKeys} were defined in .env.example but are not present in the environment:
         This may cause the app to misbehave.`);
     } else {
-      this.logger.debug('COnfig looks good :) ');
+      this.logger.debug('Config looks good :) ');
     }
 
 }
