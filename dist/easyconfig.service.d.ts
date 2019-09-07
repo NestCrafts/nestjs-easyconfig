@@ -5,6 +5,8 @@ export declare class EasyconfigService {
         [key: string]: string;
     };
     readonly errorLog: debug.Debugger;
-    constructor(filePath?: Config);
+    readonly sampleFile: string;
+    constructor(config?: Config);
     get(key: string): any;
+    safeCheck: (userEnvFile: any, config: any) => void;
 }

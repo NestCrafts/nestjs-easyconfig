@@ -1,10 +1,10 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { EasyconfigService } from './easyconfig.service';
-import { FileConfig } from './config.interface';
+import { Config } from './config.interface';
 
 @Module({})
 export class EasyconfigModule {
-  static register(options?: FileConfig): DynamicModule {
+  static register(options?: Config): DynamicModule {
     return {
       module: EasyconfigModule,
       providers: [
