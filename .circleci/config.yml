@@ -28,8 +28,8 @@ jobs:
 
       - run:
           name: Code Linting
-          command: npm run lint:fix
-          
+          command: npm run lint-fix
+
       - run:
           name: Dist Build
           command: npm run build
