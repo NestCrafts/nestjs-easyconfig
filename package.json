@@ -29,8 +29,6 @@
   },
   "bugs": "",
   "dependencies": {
-    "@types/debug": "^4.1.5",
-    "debug": "^4.1.1",
     "dotenv": "^8.1.0",
     "reflect-metadata": "0.1.12",
     "rxjs": "^6.3.3"

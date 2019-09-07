@@ -1,5 +1,5 @@
 import { DynamicModule } from '@nestjs/common';
-import { FileConfig } from './config.interface';
+import { Config } from './config.interface';
 export declare class EasyconfigModule {
-    static register(options?: FileConfig): DynamicModule;
+    static register(options?: Config): DynamicModule;
 }

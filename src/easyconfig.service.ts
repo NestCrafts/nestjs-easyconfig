@@ -2,22 +2,21 @@ import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 import { Config } from './config.interface';
 import * as path from 'path';
-import * as debug from 'debug';
+import { Logger } from '@nestjs/common';
 
 export class EasyconfigService {
   readonly envConfig: { [key: string]: string };
-  readonly errorLog = debug('warning');
   readonly sampleFile: string = '.env.sample';
+  private readonly logger = new Logger(EasyconfigService.name);
 
   constructor(config?: Config) {
-    debug.enable('warning');
 
     if (!config.path && process.env.NODE_ENV) {
       this.envConfig = dotenv.parse(
         fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)),
       );
     } else if (!config.path && !process.env.NODE_ENV) {
-      this.errorLog('Failed to load configs. Either pass file or NODE_ENV :(');
+      this.logger.error('Failed to load configs. Either pass file or NODE_ENV :(');
       return;
     } else {
       this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
@@ -30,7 +29,7 @@ export class EasyconfigService {
   get(key: string): any {
     const val = this.envConfig[key];
     if (!val) {
-      this.errorLog('The key was not found in config file :(');
+      this.logger.warn('The key was not found in config file :(');
       return;
     }
 
@@ -55,10 +54,14 @@ export class EasyconfigService {
       .filter(x => !userEnvFile.includes(x))
       .concat(userEnvFile.filter(x => !src.includes(x)));
 
-    this
-      .errorLog(`MissingEnvVarsError: ${missingKeys} were defined in .env.example but are not present in the environment:
+    if (missingKeys.length !== 0) {
+      this.logger.error(`MissingEnvVarsError: ${missingKeys} were defined in .env.example but are not present in the environment:
         This may cause the app to misbehave.`);
-  }
+    } else {
+      this.logger.debug('COnfig looks good :) ');
+    }
+
+}
 }
 
-// console.log(new EasyconfigService({safe:true}));
+//console.log(new EasyconfigService({ safe: true }));
