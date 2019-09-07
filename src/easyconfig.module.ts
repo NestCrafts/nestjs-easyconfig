@@ -1,6 +1,6 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { EasyconfigService } from './easyconfig.service';
-import { FileConfig } from './fileconfig.interface';
+import { FileConfig } from './config.interface';
 
 @Module({})
 export class EasyconfigModule {

@@ -41,6 +41,17 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - updated readme
 
+# 1.2.0 (2019-09-09)
+
+
+### Added
+
+- New safety check feature added which matches a sample env file against the supplied env file
+
+### Changed
+
+- Config structure
+
 
 
 

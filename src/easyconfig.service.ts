@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
-import { FileConfig } from './fileconfig.interface';
+import { Config } from './config.interface';
 import * as path from 'path';
 import * as debug from 'debug';
 
@@ -9,22 +9,22 @@ export class EasyconfigService {
   readonly errorLog = debug('warning');
   readonly sampleFile: string = '.env.sample';
 
-  constructor(filePath?: FileConfig) {
+  constructor(config?: Config) {
     debug.enable('warning');
 
-    if (!filePath && process.env.NODE_ENV) {
+    if (!config.path && process.env.NODE_ENV) {
       this.envConfig = dotenv.parse(
         fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)),
       );
-    } else if (!filePath && !process.env.NODE_ENV) {
+    } else if (!config.path && !process.env.NODE_ENV) {
       this.errorLog('Failed to load configs. Either pass file or NODE_ENV :(');
       return;
     } else {
-      this.envConfig = dotenv.parse(
-        fs.readFileSync(path.resolve(filePath.path)),
-      );
+      this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
     }
-    this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
+    if (config.safe) {
+      this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
+    }
   }
 
   get(key: string): any {
@@ -47,9 +47,9 @@ export class EasyconfigService {
    *  checks whether the used env file missed some keys
    */
 
-  safeCheck = (userEnvFile, filepath) => {
+  safeCheck = (userEnvFile, config) => {
     const src = Object.keys(
-      dotenv.parse(fs.readFileSync(path.resolve(filepath))),
+      dotenv.parse(fs.readFileSync(path.resolve(config))),
     );
     const missingKeys = src
       .filter(x => !userEnvFile.includes(x))
@@ -57,9 +57,8 @@ export class EasyconfigService {
 
     this
       .errorLog(`MissingEnvVarsError: ${missingKeys} were defined in .env.example but are not present in the environment:
-        Make sure to add them to the environment.`);
+        This may cause the app to misbehave.`);
   }
 }
 
-
-//console.log(new EasyconfigService());
+// console.log(new EasyconfigService({safe:true}));

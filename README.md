@@ -20,10 +20,11 @@
 
 ```bash
 $ npm install nestjs-easyconfig
+$ yarn add nestjs-easyconfig
 ```
 
 ## Usage
-### With config file supplied:
+### With config file supplied (basic):
 ```javascript
 import  { Module }  from  '@nestjs/common';
 import { EasyconfigModule } from  'nestjs-easyconfig';
@@ -33,13 +34,29 @@ import { EasyconfigModule } from  'nestjs-easyconfig';
 })
 export  class  AppModule  {}
 ```
+### With config file supplied and safe set to true:
+```javascript
+import  { Module }  from  '@nestjs/common';
+import { EasyconfigModule } from  'nestjs-easyconfig';
+
+@Module({
+ imports:  [EasyconfigModule.register({path: './config/.env', safe: true})],
+})
+export  class  AppModule  {}
+```
+By default safe is set to false. When safe is et to `true`, the module compares the supplied env
+file with the sample env file to find missing keys. If any keys which are in .env.sample but not in the nevironment used, it is immediately reported in console.
+
+`Note`: To use this, a sample env file `.env.sample` should be placed in the root dir
+
+
 ### Without config file supplied:
 ```javascript
 import  { Module }  from  '@nestjs/common';
 import { EasyconfigModule } from  'nestjs-easyconfig';
 
 @Module({
- imports:  [EasyconfigModule.register()],
+ imports:  [EasyconfigModule.register({})],
 })
 export  class  AppModule  {}
 ```
