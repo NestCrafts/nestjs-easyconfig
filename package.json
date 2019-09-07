@@ -11,6 +11,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
+    "lint-fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*{.ts,.tsx}'",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json"

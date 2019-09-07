@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/nestjs-easyconfig
+    docker:
+      - image: circleci/node:12
+    branches:
+      only:
+        - master
+        - develop
+        - /.*\/features.*/
+        - /release-.*/
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Code formatting
+          command: npm run format
+
+       - run:
+          name: Code Linting
+          command: npm run lint:fix
+      # - run:
+      #     name: Security Scan
+      #     command: npm run security
+      - run:
+          name: Dist Build
+          command: npm run build
