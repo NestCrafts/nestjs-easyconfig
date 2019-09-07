@@ -26,12 +26,10 @@ jobs:
           name: Code formatting
           command: npm run format
 
-       - run:
+      - run:
           name: Code Linting
           command: npm run lint:fix
-      # - run:
-      #     name: Security Scan
-      #     command: npm run security
+          
       - run:
           name: Dist Build
           command: npm run build
