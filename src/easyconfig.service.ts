@@ -46,7 +46,7 @@ export class EasyconfigService {
    *  checks whether the used env file missed some keys
    */
 
-  safeCheck = (userEnvFile, config) => {
+  safeCheck = (userEnvFile: string[] , config: string ) => {
     const src = Object.keys(
       dotenv.parse(fs.readFileSync(path.resolve(config))),
     );
