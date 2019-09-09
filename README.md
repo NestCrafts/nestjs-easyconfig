@@ -4,10 +4,11 @@
 </p>
 <p align="center">.</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
+<a href="https://www.npmjs.com/~nestjs-eastconfig"><img src="https://img.shields.io/npm/l/nestjs-easyconfig" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjs-eastconfig"><img src="https://img.shields.io/npm/dw/nestjs-easyconfig" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/rubiin/nestjs-easyconfig"><img src="https://circleci.com/gh/rubiin/nestjs-easyconfig/tree/master.svg?style=shield" alt="circleci" /></a>
+<a href=""><img src="https://badgen.net/dependabot/dependabot/dependabot-core/?icon=dependabot" /></a>
+<a href="https://beerpay.io/rubiin/nestjs-easyconfig"><img src="https://beerpay.io/rubiin/nestjs-easyconfig/badge.svg?style=plastic" /></a>
 
 
 </p>
@@ -78,7 +79,8 @@ For example, <b>NODE_ENV=dev</b> will make the app read `.env.dev`
 
   The package is [MIT licensed](LICENSE).
 
+
 ## Support on Beerpay
 Hey dude! Help me out for a couple of :beers:!
 
-[![Beerpay](https://beerpay.io/rubiin/nest-easyconfigs/badge.svg?style=beer-square)](https://beerpay.io/rubiin/nest-easyconfigs)  [![Beerpay](https://beerpay.io/rubiin/nest-easyconfigs/make-wish.svg?style=flat-square)](https://beerpay.io/rubiin/nest-easyconfigs?focus=wish)
+[![Beerpay](https://beerpay.io/rubiin/nestjs-easyconfig/badge.svg?style=beer-square)](https://beerpay.io/rubiin/nestjs-easyconfig)  [![Beerpay](https://beerpay.io/rubiin/nestjs-easyconfig/make-wish.svg?style=flat-square)](https://beerpay.io/rubiin/nestjs-easyconfig?focus=wish)
