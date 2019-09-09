@@ -13,8 +13,9 @@
     "test": "jest",
     "lint-fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*{.ts,.tsx}'",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "coverage": "jest --coverage",
+    "coveralls": "yarn run coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [
     "nestjs",
@@ -46,6 +47,7 @@
     "@types/jest": "24.0.11",
     "@types/node": "11.13.4",
     "@types/supertest": "2.0.7",
+    "coveralls": "^3.0.6",
     "jest": "24.7.1",
     "prettier": "1.17.0",
     "rimraf": "^2.6.2",
