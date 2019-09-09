@@ -7,5 +7,5 @@ export declare class EasyconfigService {
     private readonly logger;
     constructor(config?: Config);
     get(key: string): any;
-    safeCheck: (userEnvFile: any, config: any) => void;
+    safeCheck: (userEnvFile: string[], config: string) => void;
 }

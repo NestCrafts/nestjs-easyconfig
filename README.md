@@ -44,8 +44,8 @@ import { EasyconfigModule } from  'nestjs-easyconfig';
 })
 export  class  AppModule  {}
 ```
-By default safe is set to false. When safe is et to `true`, the module compares the supplied env
-file with the sample env file to find missing keys. If any keys which are in .env.sample but not in the nevironment used, it is immediately reported in console.
+By default safe is set to false. When safe is set to `true`, the module compares the supplied env
+file with the sample env file to find missing keys. If any keys which are in .env.sample but not in the evironment used, it is immediately reported in console.
 
 `Note`: To use this, a sample env file `.env.sample` should be placed in the root dir
 

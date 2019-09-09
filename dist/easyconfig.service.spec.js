@@ -1,24 +1,31 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const testing_1 = require("@nestjs/testing");
 const easyconfig_service_1 = require("./easyconfig.service");
 describe('EasyconfigService', () => {
-    let service;
-    beforeEach(() => __awaiter(this, void 0, void 0, function* () {
-        const module = yield testing_1.Test.createTestingModule({
-            providers: [easyconfig_service_1.EasyconfigService],
-        }).compile();
-        service = module.get(easyconfig_service_1.EasyconfigService);
-    }));
+    const service = new easyconfig_service_1.EasyconfigService({ path: '.env.dev', safe: true });
     it('should be defined', () => {
+        expect(service).toBeDefined();
+    });
+    it('should be return int', () => {
+        expect(service.get('KEYINT')).toEqual(100);
+    });
+    it('should be return boolean', () => {
+        expect(service.get('KEYBOOL')).toEqual(true);
+    });
+    it('should be return string', () => {
+        expect(service.get('KEYSTR')).toEqual('hello');
+    });
+});
+describe('EasyconfigService with NODE_ENV', () => {
+    process.env.NODE_ENV = 'dev';
+    const service = new easyconfig_service_1.EasyconfigService({});
+    it('should be defined', () => {
+        expect(service).toBeDefined();
+    });
+});
+describe('EasyconfigService without NODE_ENV', () => {
+    const service = new easyconfig_service_1.EasyconfigService({});
+    it('should not be defined', () => {
         expect(service).toBeDefined();
     });
 });
