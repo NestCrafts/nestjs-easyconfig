@@ -71,6 +71,28 @@ For example, <b>NODE_ENV=dev</b> will make the app read `.env.dev`
 
 > Note: The .env file also has to be in root folder
 
+### Getting environment variables
+
+Regardless of how the `EasyconfigModule` is imported into the app, you can get the variable values using the `EasyconfigService`.
+
+```javascript
+import { Controller, Get } from '@nestjs/common';
+import { EasyconfigService } from 'nestjs-easyconfig';
+
+@Controller('api')
+export class AppController {
+  constructor (private config: EasyconfigService) {}
+  @Get()
+  findAll() {
+    return {
+      value: this.config.get('key')
+    };
+  }
+}
+```
+
+> Note: the `get` method will automatically cast environment variables
+
 ## Stay in touch
 
 - Author - [Rubin Bhandari](https://github.com/rubiin)
