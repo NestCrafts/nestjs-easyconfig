@@ -52,6 +52,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Config structure
 
+# 1.4.0 (2019-09-24)
+
+
+
+### Changed
+
+- Updated dependencies
 
 
 
