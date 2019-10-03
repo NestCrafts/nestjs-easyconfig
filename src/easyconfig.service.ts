@@ -63,11 +63,11 @@ export class EasyconfigService {
         this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
       }
 
-      this.envConfig = dotenvParseVariables(this.envConfig);
-
       if (config.safe) {
         this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
       }
+
+      this.envConfig = dotenvParseVariables(this.envConfig);
     } catch (err) {
       throw new EasyconfigError(err);
     }
