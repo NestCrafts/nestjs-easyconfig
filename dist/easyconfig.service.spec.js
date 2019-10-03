@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const easyconfig_service_1 = require("./easyconfig.service");
 describe('EasyconfigService', () => {
-    const service = new easyconfig_service_1.EasyconfigService({ path: '.env.dev', safe: true });
+    const service = new easyconfig_service_1.EasyconfigService({
+        path: '.env.dev',
+        safe: true,
+    });
     it('should be defined', () => {
         expect(service).toBeDefined();
     });
@@ -14,6 +17,9 @@ describe('EasyconfigService', () => {
     });
     it('should be return string', () => {
         expect(service.get('KEYSTR')).toEqual('hello');
+    });
+    it('should be return array', () => {
+        expect(service.get('ARR')).toEqual([1, 'foo', true, false]);
     });
 });
 describe('EasyconfigService with NODE_ENV', () => {

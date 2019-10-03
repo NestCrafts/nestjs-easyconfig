@@ -21,6 +21,10 @@ describe('EasyconfigService', () => {
   it('should be return string', () => {
     expect(service.get('KEYSTR')).toEqual('hello');
   });
+
+  it('should be return array', () => {
+    expect(service.get('ARR')).toEqual([1, 'foo', true, false]);
+  });
 });
 
 describe('EasyconfigService with NODE_ENV', () => {
