@@ -1,7 +1,10 @@
 import { EasyconfigService } from './easyconfig.service';
 
 describe('EasyconfigService', () => {
-  const service: EasyconfigService = new EasyconfigService({ path: '.env.dev', safe: true });
+  const service: EasyconfigService = new EasyconfigService({
+    path: '.env.dev',
+    safe: true,
+  });
 
   it('should be defined', () => {
     expect(service).toBeDefined();
@@ -27,7 +30,6 @@ describe('EasyconfigService with NODE_ENV', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
-
 });
 
 describe('EasyconfigService without NODE_ENV', () => {
@@ -36,5 +38,4 @@ describe('EasyconfigService without NODE_ENV', () => {
   it('should not be defined', () => {
     expect(service).toBeDefined();
   });
-
 });
