@@ -21,6 +21,13 @@ describe('EasyconfigService', () => {
   it('should be return string', () => {
     expect(service.get('KEYSTR')).toEqual('hello');
   });
+
+  it('should return a Logger object', () => {
+    expect(service['logger']).toEqual({
+      context: 'EasyconfigService',
+      isTimestampEnabled: false,
+    });
+  });
 });
 
 describe('EasyconfigService with NODE_ENV', () => {
