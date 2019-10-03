@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const easyconfig_service_1 = require("./easyconfig.service");
+const easyconfig_error_1 = require("./easyconfig.error");
 describe('EasyconfigService', () => {
     const service = new easyconfig_service_1.EasyconfigService({
         path: '.env.dev',
@@ -20,6 +21,17 @@ describe('EasyconfigService', () => {
     });
     it('should be return array', () => {
         expect(service.get('ARR')).toEqual([1, 'foo', true, false]);
+    });
+    it('should log error when something goes wrong', () => {
+        try {
+            const anotherService = new easyconfig_service_1.EasyconfigService({
+                path: '.env.dev1',
+                safe: true,
+            });
+        }
+        catch (err) {
+            expect(err).toBeInstanceOf(easyconfig_error_1.EasyconfigError);
+        }
     });
 });
 describe('EasyconfigService with NODE_ENV', () => {

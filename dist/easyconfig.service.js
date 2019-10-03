@@ -5,6 +5,7 @@ const dotenvParseVariables = require("dotenv-parse-variables");
 const fs = require("fs");
 const path = require("path");
 const common_1 = require("@nestjs/common");
+const easyconfig_error_1 = require("./easyconfig.error");
 class EasyconfigService {
     constructor(config) {
         this.sampleFile = '.env.sample';
@@ -29,22 +30,21 @@ class EasyconfigService {
                     this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)));
                 }
                 else if (!config.path && !process.env.NODE_ENV) {
-                    this.logger.error('Failed to load configs. Either pass file or NODE_ENV :(');
-                    return;
+                    throw new Error('Failed to load configs. Either pass file or NODE_ENV :(');
                 }
                 else {
                     this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
                 }
                 this.envConfig = dotenvParseVariables(this.envConfig);
+                if (config.safe) {
+                    this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
+                }
             }
             catch (err) {
-                this.logger.error('Failed to load configs.', err.message);
+                throw new easyconfig_error_1.EasyconfigError(err);
             }
         };
         this.tryGetConfigFromEnv(config);
-        if (config.safe) {
-            this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
-        }
     }
     get(key) {
         const val = this.envConfig[key];

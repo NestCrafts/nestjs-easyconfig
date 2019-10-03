@@ -5,3 +5,4 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./easyconfig.module"));
 __export(require("./easyconfig.service"));
+__export(require("./easyconfig.error"));

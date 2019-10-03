@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import { Config } from './config.interface';
 import * as path from 'path';
 import { Logger } from '@nestjs/common';
+import { EasyconfigError } from './easyconfig.error';
 
 export class EasyconfigService {
   readonly sampleFile: string = '.env.sample';
@@ -13,10 +14,6 @@ export class EasyconfigService {
 
   constructor(config?: Config) {
     this.tryGetConfigFromEnv(config);
-
-    if (config.safe) {
-      this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
-    }
   }
 
   get(key: string): any {
@@ -59,21 +56,20 @@ export class EasyconfigService {
           fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)),
         );
       } else if (!config.path && !process.env.NODE_ENV) {
-        this.logger.error(
+        throw new Error(
           'Failed to load configs. Either pass file or NODE_ENV :(',
         );
-
-        return;
       } else {
         this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
       }
 
       this.envConfig = dotenvParseVariables(this.envConfig);
+
+      if (config.safe) {
+        this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
+      }
     } catch (err) {
-      this.logger.error(
-        'Failed to load configs.',
-        err.message,
-      );
+      throw new EasyconfigError(err);
     }
 
   }

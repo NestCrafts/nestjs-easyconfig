@@ -1,4 +1,5 @@
 import { EasyconfigService } from './easyconfig.service';
+import { EasyconfigError } from './easyconfig.error';
 
 describe('EasyconfigService', () => {
   const service: EasyconfigService = new EasyconfigService({
@@ -24,6 +25,18 @@ describe('EasyconfigService', () => {
 
   it('should be return array', () => {
     expect(service.get('ARR')).toEqual([1, 'foo', true, false]);
+  });
+
+  it('should throw error when something goes wrong', () => {
+    try {
+      const anotherService: EasyconfigService = new EasyconfigService({
+        path: '.env.dev1',
+        safe: true,
+      });
+    } catch (err) {
+      expect(err).toBeInstanceOf(EasyconfigError);
+    }
+
   });
 });
 
