@@ -1,5 +1,5 @@
-import { EasyconfigService } from './easyconfig.service';
-import { EasyconfigError } from './easyconfig.error';
+import { EasyconfigService } from '../../src/easyconfig.service';
+import { EasyconfigError } from '../../src/easyconfig.error';
 
 describe('EasyconfigService', () => {
   const service: EasyconfigService = new EasyconfigService({
