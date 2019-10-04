@@ -1,46 +1,30 @@
 import * as dotenv from 'dotenv';
+import * as dotenvParseVariables from 'dotenv-parse-variables';
 import * as fs from 'fs';
 import { Config } from './config.interface';
 import * as path from 'path';
 import { Logger } from '@nestjs/common';
+import { EasyconfigError } from './easyconfig.error';
 
 export class EasyconfigService {
-  readonly envConfig: { [key: string]: string };
   readonly sampleFile: string = '.env.sample';
+
+  private envConfig: { [key: string]: string };
   private readonly logger = new Logger(EasyconfigService.name);
 
   constructor(config?: Config) {
-    if (!config.path && process.env.NODE_ENV) {
-      this.envConfig = dotenv.parse(
-        fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)),
-      );
-    } else if (!config.path && !process.env.NODE_ENV) {
-      this.logger.error(
-        'Failed to load configs. Either pass file or NODE_ENV :(',
-      );
-      return;
-    } else {
-      this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
-    }
-    if (config.safe) {
-      this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
-    }
+    this.tryGetConfigFromEnv(config);
   }
 
   get(key: string): any {
     const val = this.envConfig[key];
+
     if (!val) {
       this.logger.warn('The key was not found in config file :(');
       return;
     }
 
-    if (/^\d+$/.test(val)) {
-      return Number(val);
-    } else if (/true|false$/.test(val.toLowerCase())) {
-      return JSON.parse(val);
-    } else {
-      return val;
-    }
+    return val;
   }
 
   /**
@@ -51,6 +35,7 @@ export class EasyconfigService {
     const src = Object.keys(
       dotenv.parse(fs.readFileSync(path.resolve(config))),
     );
+
     const missingKeys = src
       .filter(x => !userEnvFile.includes(x))
       .concat(userEnvFile.filter(x => !src.includes(x)));
@@ -62,7 +47,32 @@ export class EasyconfigService {
     } else {
       this.logger.debug('Config looks good :) ');
     }
-  };
+  }
+
+  private tryGetConfigFromEnv = (config?: Config) => {
+    try {
+      if (!config.path && process.env.NODE_ENV) {
+        this.envConfig = dotenv.parse(
+          fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)),
+        );
+      } else if (!config.path && !process.env.NODE_ENV) {
+        throw new Error(
+          'Failed to load configs. Either pass file or NODE_ENV :(',
+        );
+      } else {
+        this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
+      }
+
+      if (config.safe) {
+        this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
+      }
+
+      this.envConfig = dotenvParseVariables(this.envConfig);
+    } catch (err) {
+      throw new EasyconfigError(err);
+    }
+
+  }
 }
 
-//console.log(new EasyconfigService({ safe: true }));
+// console.log(new EasyconfigService({ safe: true }));

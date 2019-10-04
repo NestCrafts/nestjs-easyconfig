@@ -1,4 +1,5 @@
-import { EasyconfigService } from './easyconfig.service';
+import { EasyconfigService } from '../../src/easyconfig.service';
+import { EasyconfigError } from '../../src/easyconfig.error';
 
 describe('EasyconfigService', () => {
   const service: EasyconfigService = new EasyconfigService({
@@ -20,6 +21,22 @@ describe('EasyconfigService', () => {
 
   it('should be return string', () => {
     expect(service.get('KEYSTR')).toEqual('hello');
+  });
+
+  it('should be return array', () => {
+    expect(service.get('ARR')).toEqual([1, 'foo', true, false]);
+  });
+
+  it('should throw error when something goes wrong', () => {
+    try {
+      const anotherService: EasyconfigService = new EasyconfigService({
+        path: '.env.dev1',
+        safe: true,
+      });
+    } catch (err) {
+      expect(err).toBeInstanceOf(EasyconfigError);
+    }
+
   });
 });
 
