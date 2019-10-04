@@ -22,7 +22,7 @@ describe('EasyconfigService', () => {
     it('should be return array', () => {
         expect(service.get('ARR')).toEqual([1, 'foo', true, false]);
     });
-    it('should log error when something goes wrong', () => {
+    it('should throw error when something goes wrong', () => {
         try {
             const anotherService = new easyconfig_service_1.EasyconfigService({
                 path: '.env.dev1',
