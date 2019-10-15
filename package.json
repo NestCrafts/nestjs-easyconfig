@@ -37,14 +37,14 @@
     "rxjs": "^6.5.3"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.8.0"
+    "@nestjs/common": "^6.8.3"
   },
   "devDependencies": {
     "@nestjs/common": "^6.0.0",
-    "@nestjs/core": "^6.8.0",
-    "@nestjs/testing": "6.8.2",
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.11",
+    "@nestjs/core": "^6.8.3",
+    "@nestjs/testing": "6.8.3",
+    "@types/jest": "24.0.19",
+    "@types/node": "12.7.12",
     "jest": "24.9.0",
     "prettier": "1.18.2",
     "rimraf": "^3.0.0",
@@ -54,6 +54,6 @@
     "tsc-watch": "4.0.0",
     "tsconfig-paths": "3.9.0",
     "tslint": "5.20.0",
-    "typescript": "3.6.3"
+    "typescript": "3.6.4"
   }
 }
