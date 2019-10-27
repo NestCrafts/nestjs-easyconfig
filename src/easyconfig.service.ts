@@ -74,5 +74,3 @@ export class EasyconfigService {
 
   }
 }
-
-// console.log(new EasyconfigService({ safe: true }));

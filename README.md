@@ -93,6 +93,31 @@ export class AppController {
 
 > Note: the `get` method will automatically cast environment variables
 
+### Type processing
+Module uses dotenv-parse-variables lib (https://www.npmjs.com/package/dotenv-parse-variables) to process env file.
+Example of type processing:
+
+```
+    foo=test
+    bar=1
+    baz=true
+    qux=test,1,true,
+    bat=false*,
+    qwe=`1,2,3`,
+    asd=test,1,true*
+```
+will be processed to
+```javascript
+    {
+        foo: 'test',
+        bar: 1,
+        baz: true,
+        qux: ['test', 1, true],
+        bat: 'false',
+        qwe: '1,2,3',
+        asd: ['test', 1, 'true']
+    }
+```
 ## Stay in touch
 
 - Author - [Rubin Bhandari](https://github.com/rubiin)

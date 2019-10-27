@@ -4,6 +4,15 @@ All notable changes to the "nestjs" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+# 1.5.0 (2019-10-29)
+
+### Added
+- Now uses dot-env-parse module to parse values in configs
+
+### Changed
+- Updated dependencies
+
+
 # 1.4.0 (2019-09-24)
 
 ### Changed
