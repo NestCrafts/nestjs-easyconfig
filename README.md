@@ -1,5 +1,5 @@
 <p align="center">
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
   <a href="http://github.com/nest-easyconfigs/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 <p align="center">.</p>
@@ -164,6 +164,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/dlukanin"><img src="https://avatars1.githubusercontent.com/u/875405?v=4" width="100px;" alt="Dmitry Lukanin"/><br /><sub><b>Dmitry Lukanin</b></sub></a><br /><a href="#infra-dlukanin" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=dlukanin" title="Tests">⚠️</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=dlukanin" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/bradtaniguchi"><img src="https://avatars3.githubusercontent.com/u/10079147?v=4" width="100px;" alt="Brad"/><br /><sub><b>Brad</b></sub></a><br /><a href="#infra-bradtaniguchi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=bradtaniguchi" title="Code">💻</a></td>
   </tr>
 </table>
 

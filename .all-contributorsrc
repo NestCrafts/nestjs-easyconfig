@@ -15,6 +15,16 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "bradtaniguchi",
+      "name": "Brad",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10079147?v=4",
+      "profile": "https://github.com/bradtaniguchi",
+      "contributions": [
+        "infra",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
