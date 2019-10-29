@@ -118,6 +118,17 @@ will be processed to
         asd: ['test', 1, 'true']
     }
 ```
+
+## Contributing
+
+To contribute to project, follow these steps:
+
+   - Fork this repository.
+   - Create a branch: git checkout -b <branch_name>.
+   - Make your changes and commit them: `git commit -m '<commit_message>'
+   - Push to the original branch: git push origin <project_name>/<location>
+   - Create the pull request.
+
 ## Stay in touch
 
 - Author - [Rubin Bhandari](https://github.com/rubiin)
