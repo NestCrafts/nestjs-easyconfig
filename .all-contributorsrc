@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dlukanin",
+      "name": "Dmitry Lukanin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/875405?v=4",
+      "profile": "https://github.com/dlukanin",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "nestjs-easyconfig",
+  "projectOwner": "rubiin",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
