@@ -25,6 +25,15 @@
         "infra",
         "code"
       ]
+    },
+    {
+      "login": "andrasbacsai",
+      "name": "Andras Bacsai",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/5845193?v=4",
+      "profile": "https://coollabs.io",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
