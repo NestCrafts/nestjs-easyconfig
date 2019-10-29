@@ -132,7 +132,7 @@ To contribute to project, follow these steps:
 ## Stay in touch
 
 - Author - [Rubin Bhandari](https://github.com/rubiin)
-- Dev․to - [@rubinsays](https://dev.to/rubinsays)
+- Dev․to - [@rubinsays](https://dev.to/rubiin)
 - Discord - [@rubin#1186](https://discordapp.com/)
 
 ## License
