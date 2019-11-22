@@ -4,6 +4,13 @@ All notable changes to the "nestjs" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+
+# 1.6.1 (2019-11-19)
+
+### Added
+- Now encoding and debug options for underlying dotenv
+
+
 # 1.5.0 (2019-10-29)
 
 ### Added

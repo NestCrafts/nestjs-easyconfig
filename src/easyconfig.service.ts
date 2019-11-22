@@ -14,13 +14,14 @@ export class EasyconfigService {
 
   constructor(config?: Config) {
     this.tryGetConfigFromEnv(config);
+    dotenv.config({ debug: config.debug, encoding: config.encoding });
   }
 
   get(key: string): any {
     const val = this.envConfig[key];
 
     if (!val) {
-      this.logger.warn('The key was not found in config file :(');
+      this.logger.warn('The key was not found in config file 😕');
       return;
     }
 
@@ -47,7 +48,7 @@ export class EasyconfigService {
     } else {
       this.logger.debug('Config looks good :) ');
     }
-  }
+  };
 
   private tryGetConfigFromEnv = (config?: Config) => {
     try {
@@ -60,7 +61,9 @@ export class EasyconfigService {
           'Failed to load configs. Either pass file or NODE_ENV :(',
         );
       } else {
-        this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(config.path)));
+        this.envConfig = dotenv.parse(
+          fs.readFileSync(path.resolve(config.path)),
+        );
       }
 
       if (config.safe) {
@@ -71,6 +74,5 @@ export class EasyconfigService {
     } catch (err) {
       throw new EasyconfigError(err);
     }
-
-  }
+  };
 }

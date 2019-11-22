@@ -28,4 +28,20 @@ export interface Config {
    * ```
    */
   safe?: boolean;
+
+  /**
+   * As the lib uses dotenv, You may turn on dotenv's logging to help debug why certain keys or values are not being set as you expect.
+   *
+   * default : false
+   */
+
+  debug?: boolean;
+
+  /**
+   * This option lets you specify the encoding of your file containing environment variables.
+   *
+   * ```
+   */
+
+  encoding?: string;
 }
