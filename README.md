@@ -53,6 +53,9 @@ file with the sample env file to find missing keys. If any keys which are in .en
 
 `Note`: To use this, a sample env file `.env.sample` should be placed in the root dir
 
+
+Other config include dotenv's configs like encoding (Default: utf8) and debug(Default: false)
+
 ### Without config file supplied:
 
 ```javascript
@@ -118,6 +121,7 @@ will be processed to
         asd: ['test', 1, 'true']
     }
 ```
+
 
 ## Contributing
 
