@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://github.com/nest-easyconfigs/" target="blank"><img src="https://i.imgur.com/BvxL0JR.png" width="320" height="180" alt="" /></a>
+  <a href="http://github.com/nest-easyconfigs/" target="blank"><img src="https://i.imgur.com/BvxL0JR.png" width="320" height="200" alt="" /></a>
 </p>
 
  <p float="left">
