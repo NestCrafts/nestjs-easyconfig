@@ -1,6 +1,6 @@
 {
   "name": "nestjs-easyconfig",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Add configs to nestjs with auto type parsing",
   "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "type": "git",
     "url": "https://github.com/rubiin/nestjs-easyconfig"
   },
-  "bugs": "",
+  "bugs": "https://github.com/rubiin/nestjs-easyconfig/issues",
   "dependencies": {
     "dotenv": "^8.2.0",
     "dotenv-parse-variables": "^0.2.3"
