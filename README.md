@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <a href="http://github.com/rubiin/nest-easyconfigs/" target="blank"><img src="https://i.imgur.com/BvxL0JR.png" width="320" height="200" alt="" /></a>
 </p>
 
