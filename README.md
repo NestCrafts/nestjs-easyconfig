@@ -145,7 +145,7 @@ In general, we follow the "fork-and-pull" Git workflow.
 ## Stay in touch
 
 - Author - [Rubin Bhandari](https://github.com/rubiin)
-- Dev․to - [@rubinsays](https://dev.to/rubiin)
+- Dev․to - [@rubiin](https://dev.to/rubiin)
 - Discord - [@rubin#1186](https://discordapp.com/)
 
 ## License
