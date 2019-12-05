@@ -29,16 +29,14 @@
   "bugs": "",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "dotenv-parse-variables": "^0.2.3",
-    "reflect-metadata": "0.1.13",
-    "rxjs": "^6.5.3"
+    "dotenv-parse-variables": "^0.2.3"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.10.1"
+    "@nestjs/common": "^6.10.5"
   },
   "devDependencies": {
     "@nestjs/common": "^6.0.0",
-    "@nestjs/core": "^6.10.1",
+    "@nestjs/core": "^6.10.5",
     "@nestjs/testing": "6.10.5",
     "@types/jest": "24.0.23",
     "@types/node": "12.12.14",
@@ -48,9 +46,11 @@
     "supertest": "4.0.2",
     "ts-jest": "24.2.0",
     "ts-node": "8.5.4",
+    "rxjs": "^6.5.3",
     "tsc-watch": "4.0.0",
     "tsconfig-paths": "3.9.0",
     "tslint": "5.20.1",
-    "typescript": "3.7.2"
+    "typescript": "3.7.3",
+    "reflect-metadata": "0.1.13"
   }
 }
