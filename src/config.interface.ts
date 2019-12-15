@@ -7,6 +7,10 @@ export interface Config {
    * For example, if the NODE_ENV is `production`, the file `.env.<NODE_ENV>` will load.
    */
   path?: string;
+
+
+  sampleFilePath?: string;
+
   /**
    * checks whether the used env file is missing some keys.
    *

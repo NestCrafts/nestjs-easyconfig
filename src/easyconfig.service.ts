@@ -67,7 +67,12 @@ export class EasyconfigService {
       }
 
       if (config.safe) {
-        this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
+        if(config.sampleFilePath){
+         return this.safeCheck(Object.keys(this.envConfig), path.resolve(config.sampleFilePath));
+        }
+
+        return this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
+
       }
 
       this.envConfig = dotenvParseVariables(this.envConfig);
