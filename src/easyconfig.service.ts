@@ -51,6 +51,8 @@ export class EasyconfigService {
   };
 
   private tryGetConfigFromEnv = (config?: Config) => {
+    const sampleFile: string = this.sampleFilePath ? path.resolve(config.sampleFilePath) : this.sampleFile;
+    
     try {
       if (!config.path && process.env.NODE_ENV) {
         this.envConfig = dotenv.parse(
@@ -67,12 +69,7 @@ export class EasyconfigService {
       }
 
       if (config.safe) {
-        if(config.sampleFilePath){
-         return this.safeCheck(Object.keys(this.envConfig), path.resolve(config.sampleFilePath));
-        }
-
-        return this.safeCheck(Object.keys(this.envConfig), this.sampleFile);
-
+        this.safeCheck(Object.keys(this.envConfig), sampleFile);
       }
 
       this.envConfig = dotenvParseVariables(this.envConfig);
