@@ -18,14 +18,14 @@ export class EasyconfigService {
   }
 
   get(key: string): any {
-    const val = this.envConfig[key];
+    const configExists = key in this.envConfig;
 
-    if (!val) {
+    if (!configExists) {
       this.logger.warn('The key was not found in config file 😕');
       return;
     }
 
-    return val;
+    return this.envConfig[key];
   }
 
   /**
