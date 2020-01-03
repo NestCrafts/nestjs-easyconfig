@@ -51,7 +51,7 @@ export class EasyconfigService {
   };
 
   private tryGetConfigFromEnv = (config?: Config) => {
-    const sampleFile: string = this.sampleFilePath ? path.resolve(config.sampleFilePath) : this.sampleFile;
+    const sampleFile: string = config.sampleFilePath ? path.resolve(config.sampleFilePath) : this.sampleFile;
     
     try {
       if (!config.path && process.env.NODE_ENV) {
