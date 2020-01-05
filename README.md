@@ -139,8 +139,9 @@ In general, we follow the "fork-and-pull" Git workflow.
 4. Commit changes to your own branch
 5. **Make sure** you merge the latest from "upstream" and resolve conflicts if there is any
 6. Repeat step 3(3) above
-7. Push your work back up to your fork
-8. Submit a Pull request so that we can review your changes
+7. git add and run npm run commit and fill in the details accordingly
+8. Push your work back up to your fork
+9. Submit a Pull request so that we can review your changes
 
 ## Stay in touch
 
