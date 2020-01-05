@@ -6,6 +6,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "scripts": {
+    "commit": "git-cz",
     "build": "rm -rf ./dist && tsc && npm run build:index",
     "build:index": "rm -rf ./index.js ./index.d.ts && tsc -d --skipLibCheck ./index.ts",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -41,6 +42,7 @@
     "@types/jest": "24.0.25",
     "@types/node": "13.1.4",
     "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "jest": "24.9.0",
     "prettier": "1.19.1",
     "reflect-metadata": "0.1.13",
@@ -53,5 +55,10 @@
     "tsconfig-paths": "3.9.0",
     "tslint": "5.20.1",
     "typescript": "3.7.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
