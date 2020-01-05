@@ -15,8 +15,12 @@ describe('EasyconfigService', () => {
     expect(service.get('KEYINT')).toEqual(100);
   });
 
-  it('should be return boolean', () => {
-    expect(service.get('KEYBOOL')).toEqual(true);
+  it('should be return a true boolean', () => {
+    expect(service.get('KEYBOOLTRUE')).toEqual(true);
+  });
+
+  it('should be return a false boolean', () => {
+    expect(service.get('KEYBOOLFALSE')).toEqual(false);
   });
 
   it('should be return string', () => {
