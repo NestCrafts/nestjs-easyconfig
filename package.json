@@ -44,6 +44,8 @@
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "jest": "24.9.0",
+    "nestjs-ogma": "^2.0.3",
+    "ogma": "^2.0.1",
     "prettier": "1.19.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "^3.0.0",
