@@ -48,7 +48,7 @@ export class EasyconfigService {
 		} else {
 			this.logger.debug('Config looks good :) ');
 		}
-	};
+	}
 
 	private tryGetConfigFromEnv = (config?: Config) => {
 		try {
@@ -81,5 +81,5 @@ export class EasyconfigService {
 		} catch (err) {
 			throw new EasyconfigError(err);
 		}
-	};
+	}
 }
