@@ -34,11 +34,22 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "genu",
+      "name": "Eugen Istoc",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/928780?v=4",
+      "profile": "http://www.eugenistoc.com",
+      "contributions": [
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "nestjs-easyconfig",
   "projectOwner": "rubiin",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
