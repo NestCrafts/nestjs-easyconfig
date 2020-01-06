@@ -31,5 +31,9 @@ jobs:
           command: npm run lint-fix
 
       - run:
+          name: Test Cases
+          command: npm run test:unit
+
+      - run:
           name: Dist Build
           command: npm run build

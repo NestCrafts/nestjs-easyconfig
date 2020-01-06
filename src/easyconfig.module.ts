@@ -4,16 +4,16 @@ import { Config } from './config.interface';
 
 @Module({})
 export class EasyconfigModule {
-  static register(options?: Config): DynamicModule {
-    return {
-      module: EasyconfigModule,
-      providers: [
-        {
-          provide: EasyconfigService,
-          useValue: new EasyconfigService(options),
-        },
-      ],
-      exports: [EasyconfigService],
-    };
-  }
+	static register(options?: Config): DynamicModule {
+		return {
+			module: EasyconfigModule,
+			providers: [
+				{
+					provide: EasyconfigService,
+					useValue: new EasyconfigService(options),
+				},
+			],
+			exports: [EasyconfigService],
+		};
+	}
 }

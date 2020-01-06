@@ -139,8 +139,9 @@ In general, we follow the "fork-and-pull" Git workflow.
 4. Commit changes to your own branch
 5. **Make sure** you merge the latest from "upstream" and resolve conflicts if there is any
 6. Repeat step 3(3) above
-7. Push your work back up to your fork
-8. Submit a Pull request so that we can review your changes
+7. git add and run npm run commit and fill in the details accordingly
+8. Push your work back up to your fork
+9. Submit a Pull request so that we can review your changes
 
 ## Stay in touch
 
@@ -163,15 +164,19 @@ Hey dude! Help me out for a couple of :beers:!
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/dlukanin"><img src="https://avatars1.githubusercontent.com/u/875405?v=4" width="100px;" alt="Dmitry Lukanin"/><br /><sub><b>Dmitry Lukanin</b></sub></a><br /><a href="#infra-dlukanin" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=dlukanin" title="Tests">⚠️</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=dlukanin" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/bradtaniguchi"><img src="https://avatars3.githubusercontent.com/u/10079147?v=4" width="100px;" alt="Brad"/><br /><sub><b>Brad</b></sub></a><br /><a href="#infra-bradtaniguchi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=bradtaniguchi" title="Code">💻</a></td>
-    <td align="center"><a href="https://coollabs.io"><img src="https://avatars1.githubusercontent.com/u/5845193?v=4" width="100px;" alt="Andras Bacsai"/><br /><sub><b>Andras Bacsai</b></sub></a><br /><a href="#infra-andrasbacsai" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/dlukanin"><img src="https://avatars1.githubusercontent.com/u/875405?v=4" width="100px;" alt=""/><br /><sub><b>Dmitry Lukanin</b></sub></a><br /><a href="#infra-dlukanin" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=dlukanin" title="Tests">⚠️</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=dlukanin" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/bradtaniguchi"><img src="https://avatars3.githubusercontent.com/u/10079147?v=4" width="100px;" alt=""/><br /><sub><b>Brad</b></sub></a><br /><a href="#infra-bradtaniguchi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=bradtaniguchi" title="Code">💻</a></td>
+    <td align="center"><a href="https://coollabs.io"><img src="https://avatars1.githubusercontent.com/u/5845193?v=4" width="100px;" alt=""/><br /><sub><b>Andras Bacsai</b></sub></a><br /><a href="#infra-andrasbacsai" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="http://www.eugenistoc.com"><img src="https://avatars1.githubusercontent.com/u/928780?v=4" width="100px;" alt=""/><br /><sub><b>Eugen Istoc</b></sub></a><br /><a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=genu" title="Tests">⚠️</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=genu" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
