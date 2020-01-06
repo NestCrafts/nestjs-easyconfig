@@ -172,6 +172,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/bradtaniguchi"><img src="https://avatars3.githubusercontent.com/u/10079147?v=4" width="100px;" alt=""/><br /><sub><b>Brad</b></sub></a><br /><a href="#infra-bradtaniguchi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=bradtaniguchi" title="Code">💻</a></td>
     <td align="center"><a href="https://coollabs.io"><img src="https://avatars1.githubusercontent.com/u/5845193?v=4" width="100px;" alt=""/><br /><sub><b>Andras Bacsai</b></sub></a><br /><a href="#infra-andrasbacsai" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="http://www.eugenistoc.com"><img src="https://avatars1.githubusercontent.com/u/928780?v=4" width="100px;" alt=""/><br /><sub><b>Eugen Istoc</b></sub></a><br /><a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=genu" title="Tests">⚠️</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=genu" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jmcdo29"><img src="https://avatars3.githubusercontent.com/u/28268680?v=4" width="100px;" alt=""/><br /><sub><b>Jay McDoniel</b></sub></a><br /><a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=jmcdo29" title="Tests">⚠️</a> <a href="https://github.com/rubiin/nestjs-easyconfig/commits?author=jmcdo29" title="Code">💻</a></td>
   </tr>
 </table>
 
