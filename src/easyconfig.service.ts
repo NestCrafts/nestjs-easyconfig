@@ -3,16 +3,17 @@ import * as dotenvParseVariables from 'dotenv-parse-variables';
 import * as fs from 'fs';
 import { Config } from './config.interface';
 import * as path from 'path';
-import { Logger } from '@nestjs/common';
+import { Logger, LoggerService } from '@nestjs/common';
 import { EasyconfigError } from './easyconfig.error';
 
 export class EasyconfigService {
 	readonly sampleFile: string = '.env.sample';
 
 	private envConfig: { [key: string]: string };
-	private readonly logger = new Logger(EasyconfigService.name);
+	private readonly logger: LoggerService;
 
 	constructor(config?: Config) {
+		this.logger = config.logger || new Logger(EasyconfigService.name);
 		this.tryGetConfigFromEnv(config);
 		dotenv.config({ debug: config.debug, encoding: config.encoding });
 	}
