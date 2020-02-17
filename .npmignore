@@ -4,7 +4,11 @@ src/
 .circleci/*
 .env*
 test/*
-*.md
+CHANGELOG.md
+LICENSE
+README.md
+CONTRIBUTING.md
+.all-contributorsrc
 /index.ts
 yarn.lock
 yarn-error.log
