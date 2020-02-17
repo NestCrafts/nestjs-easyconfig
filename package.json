@@ -1,6 +1,6 @@
 {
   "name": "nestjs-easyconfig",
-  "version": "1.8.0",
+  "version": "1.8.6",
   "description": "Add configs to nestjs with auto type parsing",
   "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
   "license": "MIT",
@@ -33,27 +33,27 @@
     "dotenv-parse-variables": "^0.2.3"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.10.13"
+    "@nestjs/common": "^6.11.7"
   },
   "devDependencies": {
     "@nestjs/common": "^6.0.0",
-    "@nestjs/core": "^6.10.13",
-    "@nestjs/testing": "6.11.6",
+    "@nestjs/core": "^6.11.7",
+    "@nestjs/testing": "6.11.7",
     "@types/jest": "25.1.2",
-    "@types/node": "13.7.0",
+    "@types/node": "13.7.1",
     "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2",
+    "cz-conventional-changelog": "^3.1.0",
     "jest": "25.1.0",
-    "nestjs-ogma": "^2.0.3",
-    "ogma": "^2.0.1",
+    "nestjs-ogma": "^2.0.4",
+    "ogma": "^2.1.1",
     "prettier": "1.19.1",
     "reflect-metadata": "0.1.13",
-    "rimraf": "^3.0.0",
+    "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
     "supertest": "4.0.2",
     "ts-jest": "25.2.0",
     "ts-node": "8.6.2",
-    "tsc-watch": "4.0.0",
+    "tsc-watch": "4.1.0",
     "tsconfig-paths": "3.9.0",
     "tslint": "6.0.0",
     "typescript": "3.7.5"

@@ -1,6 +1,10 @@
 tsconfig.json
 node_modules/
 src/
+.circleci/*
+.env*
+test/*
+*.md
 /index.ts
 yarn.lock
 yarn-error.log
