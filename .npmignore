@@ -6,7 +6,6 @@ src/
 test/*
 CHANGELOG.md
 LICENSE
-README.md
 CONTRIBUTING.md
 .all-contributorsrc
 /index.ts
