@@ -1,8 +1,8 @@
 <p align="left">
   <a href="http://github.com/rubiin/nest-easyconfigs/" target="blank"><img src="https://i.imgur.com/BvxL0JR.png" width="320" height="200" alt="" /></a>
 </p>
-
  <p float="left">
+<a href="http://hits.dwyl.com/rubiin/nestjs-easyconfig"><img src="http://hits.dwyl.com/rubiin/nestjs-easyconfig.svg" alt="Hits" /></a>
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/l/nestjs-easyconfig" alt="Package License" /></a>
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/dw/nestjs-easyconfig" alt="NPM Downloads" /></a>
 <a href="https://circleci.com/rubiin/nestjs-easyconfig"><img src="https://circleci.com/gh/rubiin/nestjs-easyconfig/tree/master.svg?style=shield" alt="circleci" /></a>
