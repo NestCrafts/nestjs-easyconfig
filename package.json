@@ -33,18 +33,18 @@
     "dotenv-parse-variables": "^0.2.3"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.11.7"
+    "@nestjs/common": "^6.11.11"
   },
   "devDependencies": {
     "@nestjs/common": "^6.0.0",
-    "@nestjs/core": "^6.11.7",
+    "@nestjs/core": "^6.11.11",
     "@nestjs/testing": "6.11.11",
     "@types/jest": "25.1.4",
     "@types/node": "13.9.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.1.0",
     "jest": "25.1.0",
-    "nestjs-ogma": "^2.0.4",
+    "nestjs-ogma": "^2.0.5",
     "ogma": "^2.1.1",
     "prettier": "1.19.1",
     "reflect-metadata": "0.1.13",
