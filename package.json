@@ -38,7 +38,7 @@
   "devDependencies": {
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.11.11",
-    "@nestjs/testing": "6.11.11",
+    "@nestjs/testing": "7.0.0",
     "@types/jest": "25.1.4",
     "@types/node": "13.9.1",
     "commitizen": "^4.0.3",
