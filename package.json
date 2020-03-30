@@ -43,7 +43,7 @@
     "@types/node": "13.9.3",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.1.0",
-    "jest": "25.2.3",
+    "jest": "25.2.4",
     "nestjs-ogma": "^2.0.5",
     "ogma": "^2.1.1",
     "prettier": "2.0.2",
