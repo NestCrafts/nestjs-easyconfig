@@ -49,10 +49,12 @@ export class EasyconfigService {
 		} else {
 			this.logger.debug('Config looks good :) ');
 		}
-	}
+	};
 
 	private tryGetConfigFromEnv = (config?: Config) => {
-		const sampleFile: string = config.sampleFilePath ? path.resolve(config.sampleFilePath) : this.sampleFile;
+		const sampleFile: string = config.sampleFilePath
+			? path.resolve(config.sampleFilePath)
+			: this.sampleFile;
 
 		try {
 			if (!config.path && process.env.NODE_ENV) {
@@ -77,5 +79,5 @@ export class EasyconfigService {
 		} catch (err) {
 			throw new EasyconfigError(err);
 		}
-	}
+	};
 }

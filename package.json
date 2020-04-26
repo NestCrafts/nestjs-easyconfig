@@ -33,26 +33,26 @@
     "dotenv-parse-variables": "^0.2.3"
   },
   "peerDependencies": {
-    "@nestjs/common": "^7.0.7"
+    "@nestjs/common": "^7.0.9"
   },
   "devDependencies": {
     "@nestjs/common": "^6.0.0",
-    "@nestjs/core": "^7.0.7",
-    "@nestjs/testing": "7.0.8",
+    "@nestjs/core": "^7.0.9",
+    "@nestjs/testing": "7.0.9",
     "@types/jest": "25.2.1",
-    "@types/node": "13.13.1",
-    "commitizen": "^4.0.3",
+    "@types/node": "13.13.2",
+    "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.1.0",
     "jest": "25.4.0",
     "nestjs-ogma": "^2.0.5",
     "ogma": "^2.1.1",
-    "prettier": "2.0.4",
+    "prettier": "2.0.5",
     "reflect-metadata": "0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.5",
     "supertest": "4.0.2",
     "ts-jest": "25.4.0",
-    "ts-node": "8.9.0",
+    "ts-node": "8.9.1",
     "tsc-watch": "4.2.3",
     "tsconfig-paths": "3.9.0",
     "tslint": "6.1.1",

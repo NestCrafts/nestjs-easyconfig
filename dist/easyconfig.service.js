@@ -24,7 +24,9 @@ class EasyconfigService {
             }
         };
         this.tryGetConfigFromEnv = (config) => {
-            const sampleFile = config.sampleFilePath ? path.resolve(config.sampleFilePath) : this.sampleFile;
+            const sampleFile = config.sampleFilePath
+                ? path.resolve(config.sampleFilePath)
+                : this.sampleFile;
             try {
                 if (!config.path && process.env.NODE_ENV) {
                     this.envConfig = dotenv.parse(fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)));

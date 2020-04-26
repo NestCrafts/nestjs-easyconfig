@@ -54,5 +54,5 @@ export interface Config {
 	 * This option allows you to pass in a pre-defined logger instance. The logger must implement the NestJS LoggerService interface
 	 */
 
-	 logger?: LoggerService;
+	logger?: LoggerService;
 }
