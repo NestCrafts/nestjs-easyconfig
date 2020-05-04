@@ -30,7 +30,7 @@
   "bugs": "https://github.com/rubiin/nestjs-easyconfig/issues",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "dotenv-parse-variables": "^0.2.3"
+    "dotenv-parse-variables": "^0.3.0"
   },
   "peerDependencies": {
     "@nestjs/common": "^7.0.9"
