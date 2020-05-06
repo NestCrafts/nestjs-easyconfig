@@ -1482,10 +1482,10 @@ domexception@^1.0.1:
   dependencies:
     webidl-conversions "^4.0.2"
 
-dotenv-parse-variables@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/dotenv-parse-variables/-/dotenv-parse-variables-0.2.3.tgz#9f509c74b952f3c8dbfda6674fb060398d0ed7fc"
-  integrity sha512-cuog/uu2sD6AGTExLldBqN4kUWNjGG86cSpYGYgZrzgSiy37HkB3OOpMv7cTiQ7SKCMu8WryUS9P6lqwrh0pLg==
+dotenv-parse-variables@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/dotenv-parse-variables/-/dotenv-parse-variables-0.3.0.tgz#576e9519bf21317ca60920c1d815e0b4eddf5447"
+  integrity sha512-ZQ/KWhk7xpzjWjfljG/znfUqmelXQovEZvAZlzvSVB3aSXVjG3GUlR+DiwxHEKPr7BgqjVSmWacFLkQWpCZNBQ==
   dependencies:
     debug "^4.1.1"
 
