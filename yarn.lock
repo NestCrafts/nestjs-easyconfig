@@ -526,13 +526,13 @@
     tslib "1.11.1"
     uuid "7.0.3"
 
-"@nestjs/testing@7.0.9":
-  version "7.0.9"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.0.9.tgz#c6b342dd34f060f18406bd7eb753edc5ecbb35c7"
-  integrity sha512-dbcnKV5QfYkdyxVXuvRb/435MB/vP+OPqC3h4o3wb/39cL0EU7duANoMzjHxfI0K4kQCsM9iIbeNGFOAOaEBDA==
+"@nestjs/testing@7.0.13":
+  version "7.0.13"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.0.13.tgz#eba6ae7187af6da1c7e6a63f63b79198c5d6528d"
+  integrity sha512-Cc4yIGh5sKEFUsP02ToJX6/v57n+h4E43u5x6te3ocyUq6iJYae5tbshthEjNzieVIY80+dKu99EAB1P+psUCg==
   dependencies:
     optional "0.1.4"
-    tslib "1.11.1"
+    tslib "1.11.2"
 
 "@nuxtjs/opencollective@0.2.2":
   version "0.2.2"
@@ -4351,10 +4351,15 @@ tsconfig-paths@3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@1.11.1, tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@1.11.1:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+
+tslib@1.11.2, tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.2.tgz#9c79d83272c9a7aaf166f73915c9667ecdde3cc9"
+  integrity sha512-tTSkux6IGPnUGUd1XAZHcpu85MOkIl5zX49pO+jfsie3eP0B6pyhOlLXm3cAC6T7s+euSDDUUV+Acop5WmtkVg==
 
 tslint@6.1.2:
   version "6.1.2"
