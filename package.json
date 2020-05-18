@@ -39,7 +39,7 @@
     "@nestjs/common": "^7.0.9",
     "@nestjs/core": "^7.0.9",
     "@nestjs/testing": "7.0.9",
-    "@types/jest": "25.2.1",
+    "@types/jest": "25.2.3",
     "@types/node": "13.13.5",
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.1.0",
