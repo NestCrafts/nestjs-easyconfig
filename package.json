@@ -56,7 +56,7 @@
     "tsc-watch": "4.2.6",
     "tsconfig-paths": "3.9.0",
     "tslint": "6.1.2",
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   },
   "config": {
     "commitizen": {
