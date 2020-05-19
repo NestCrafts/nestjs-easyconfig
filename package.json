@@ -39,7 +39,7 @@
     "@nestjs/common": "^7.0.9",
     "@nestjs/core": "^7.0.9",
     "@nestjs/testing": "7.0.13",
-    "@types/jest": "25.2.1",
+    "@types/jest": "25.2.3",
     "@types/node": "13.13.5",
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.1.0",
@@ -53,10 +53,10 @@
     "supertest": "4.0.2",
     "ts-jest": "25.5.1",
     "ts-node": "8.10.1",
-    "tsc-watch": "4.2.3",
+    "tsc-watch": "4.2.6",
     "tsconfig-paths": "3.9.0",
     "tslint": "6.1.2",
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   },
   "config": {
     "commitizen": {
