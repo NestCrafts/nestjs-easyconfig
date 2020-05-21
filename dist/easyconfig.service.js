@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EasyconfigService = void 0;
 const dotenv = require("dotenv");
 const dotenvParseVariables = require("dotenv-parse-variables");
 const fs = require("fs");
