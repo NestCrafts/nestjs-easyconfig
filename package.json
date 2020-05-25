@@ -13,8 +13,7 @@
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "lint-fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*{.ts,.tsx}'",
     "test:watch": "jest --watch",
-    "test:unit": "jest --config ./test/jest.json",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test": "jest --config ./test/jest.json",
     "coverage": "jest --coverage",
     "coveralls": "yarn run coverage --coverageReporters=text-lcov | coveralls"
   },
@@ -33,7 +32,7 @@
     "dotenv-parse-variables": "^0.3.0"
   },
   "peerDependencies": {
-    "@nestjs/common": "^7.0.13"
+    "@nestjs/common": ">=7.0.13"
   },
   "devDependencies": {
     "@nestjs/common": "^7.0.13",
