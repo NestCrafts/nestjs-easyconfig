@@ -1,6 +1,6 @@
 {
   "name": "nestjs-easyconfig",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "description": "Add configs to nestjs with auto type parsing",
   "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
   "license": "MIT",
@@ -33,12 +33,6 @@
   },
   "peerDependencies": {
     "@nestjs/common": "^7.1.2"
-  },
-  "devDependencies": {
-    "@nestjs/common": "^7.1.2",
-    "@nestjs/core": "^7.1.2",
-    "@nestjs/testing": "7.1.2",
-    "@nestjs/common": ">=7.0.13"
   },
   "devDependencies": {
     "@nestjs/common": "^7.0.13",
