@@ -5,7 +5,7 @@
 <a href="http://hits.dwyl.com/rubiin/nestjs-easyconfig"><img src="http://hits.dwyl.com/rubiin/nestjs-easyconfig.svg" alt="Hits" /></a>
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/l/nestjs-easyconfig" alt="Package License" /></a>
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/dw/nestjs-easyconfig" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/rubiin/nestjs-easyconfig"><img src="https://circleci.com/gh/rubiin/nestjs-easyconfig/tree/master.svg?style=shield" alt="circleci" /></a>
+ <a href="https://www.npmjs.com/package/nestjs-pgpromise"><img src="https://github.com/rubiin/nestjs-easyconfig/workflows/CI/badge.svg" alt="CI" /></a> 
 <a href=""><img src="https://badgen.net/dependabot/dependabot/dependabot-core/?icon=dependabot" /></a>
 <a href="https://beerpay.io/rubiin/nestjs-easyconfig"><img src="https://beerpay.io/rubiin/nestjs-easyconfig/badge.svg?style=plastic" /></a>
 
