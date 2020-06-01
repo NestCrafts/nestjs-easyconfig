@@ -33,14 +33,14 @@
     "dotenv-parse-variables": "^0.3.0"
   },
   "peerDependencies": {
-    "@nestjs/common": "^7.0.13"
+    "@nestjs/common": "^7.1.2"
   },
   "devDependencies": {
-    "@nestjs/common": "^7.0.13",
-    "@nestjs/core": "^7.0.13",
-    "@nestjs/testing": "7.0.13",
+    "@nestjs/common": "^7.1.2",
+    "@nestjs/core": "^7.1.2",
+    "@nestjs/testing": "7.1.2",
     "@types/jest": "25.2.3",
-    "@types/node": "14.0.5",
+    "@types/node": "14.0.6",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
     "jest": "26.0.1",
@@ -51,8 +51,8 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.5",
     "supertest": "4.0.2",
-    "ts-jest": "26.0.0",
-    "ts-node": "8.10.1",
+    "ts-jest": "26.1.0",
+    "ts-node": "8.10.2",
     "tsc-watch": "4.2.8",
     "tsconfig-paths": "3.9.0",
     "tslint": "6.1.2",
