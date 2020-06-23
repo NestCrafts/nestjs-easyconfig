@@ -501,15 +501,15 @@
     chalk "^4.0.0"
 
 "@nestjs/common@^7.0.13":
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.1.3.tgz#e89ec4891cf2219cfb943d0f46dcbfd583da757c"
-  integrity sha512-b+hXo+WA5CKweFA9qvInJY6bf+IBCpqxkt2KCkI+vAVLkTghrIGV7Us/HL/yOBAGc+wSiPKAJkBHtVkkFLnw1w==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.2.0.tgz#f191c79dca5939188544975e624c1ab0fcb2f4db"
+  integrity sha512-R9oU/uni80/a/oDV3/T7ZtoJ9GMcLj5bOQrmaanAKAe50+xIueAR4R7hwYun3wSL/uvbAT1N9g4EXI3zkboCHw==
   dependencies:
     axios "0.19.2"
     cli-color "2.0.0"
-    iterare "1.2.0"
+    iterare "1.2.1"
     tslib "2.0.0"
-    uuid "8.0.0"
+    uuid "8.1.0"
 
 "@nestjs/core@^7.1.3":
   version "7.2.0"
