@@ -1,6 +1,5 @@
 tsconfig.json
 node_modules/
-src/
 .circleci/*
 .env*
 test/*
@@ -9,6 +8,14 @@ LICENSE
 CONTRIBUTING.md
 .all-contributorsrc
 /index.ts
+package-lock.json
+.gitignore
+test
+tsconfig.json
+tslint.json
+src/
+.eslintrc.js
 yarn.lock
 yarn-error.log
-package-lock.json
+.git/
+.github/
