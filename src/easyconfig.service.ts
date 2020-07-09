@@ -18,7 +18,7 @@ export class EasyconfigService {
 		dotenv.config({ debug: config.debug, encoding: config.encoding });
 	}
 
-	get(key: string): any {
+	get(key: string): string {
 		const configExists = key in this.envConfig;
 
 		if (!configExists) {
@@ -33,7 +33,7 @@ export class EasyconfigService {
 	 *  checks whether the used env file missed some keys
 	 */
 
-	safeCheck = (userEnvFile: string[], config: string) => {
+	safeCheck(userEnvFile: string[], config: string): void {
 		const src = Object.keys(
 			dotenv.parse(fs.readFileSync(path.resolve(config))),
 		);
@@ -49,7 +49,7 @@ export class EasyconfigService {
 		} else {
 			this.logger.debug('Config looks good :) ');
 		}
-	};
+	}
 
 	private tryGetConfigFromEnv = (config?: Config) => {
 		const sampleFile: string = config.sampleFilePath

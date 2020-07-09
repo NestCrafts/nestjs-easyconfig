@@ -10,8 +10,8 @@
     "build": "rm -rf ./dist && tsc && npm run build:index",
     "build:index": "rm -rf ./index.js ./index.d.ts && tsc -d --skipLibCheck ./index.ts",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json -c tslint.json",
-    "lint-fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*{.ts,.tsx}'",
+    "lint": "eslint '{src,apps,libs,test}/**/*.ts'",
+    "lint-fix": "eslint '{src,apps,libs,test}/**/*.ts' --fix",
     "test:watch": "jest --watch",
     "test": "jest --config ./test/jest.json",
     "coverage": "jest --coverage",
@@ -32,19 +32,24 @@
     "dotenv-parse-variables": "^0.3.0"
   },
   "peerDependencies": {
-    "@nestjs/common": "^7.3.1"
+    "@nestjs/common": "^7.3.2"
   },
   "devDependencies": {
     "@nestjs/common": "^7.0.13",
-    "@nestjs/core": "^7.3.1",
-    "@nestjs/testing": "7.3.1",
+    "@nestjs/core": "^7.3.2",
+    "@nestjs/testing": "7.3.2",
     "@types/jest": "26.0.4",
-    "@types/node": "14.0.19",
+    "@types/node": "14.0.20",
+    "@typescript-eslint/eslint-plugin": "3.6.0",
+    "@typescript-eslint/parser": "3.6.0",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.4.0",
+    "husky": "^4.2.5",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.22.0",
     "jest": "26.1.0",
-    "nestjs-ogma": "^2.0.5",
-    "ogma": "^2.1.1",
+    "lint-staged": "^10.2.11",
     "prettier": "2.0.5",
     "reflect-metadata": "0.1.13",
     "rimraf": "^3.0.2",
@@ -54,12 +59,19 @@
     "ts-node": "8.10.2",
     "tsc-watch": "4.2.9",
     "tsconfig-paths": "3.9.0",
-    "tslint": "6.1.2",
     "typescript": "3.9.6"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   }
 }

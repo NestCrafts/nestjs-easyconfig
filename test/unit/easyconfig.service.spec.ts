@@ -1,8 +1,6 @@
 import { EasyconfigService } from '../../src/easyconfig.service';
 import { EasyconfigError } from '../../src/easyconfig.error';
 import { Logger, LoggerService } from '@nestjs/common';
-import { OgmaService, OgmaModule } from 'nestjs-ogma';
-import { Ogma } from 'ogma';
 
 describe('EasyconfigService', () => {
 	const service: EasyconfigService = new EasyconfigService({
@@ -37,9 +35,11 @@ describe('EasyconfigService', () => {
 	it('should throw error when something goes wrong', () => {
 		try {
 			const anotherService: EasyconfigService = new EasyconfigService({
-				path: '.env.dev1',
+				path: '.env.dev',
 				safe: true,
 			});
+
+			Logger.log(anotherService.get('KEYSTR'))
 		} catch (err) {
 			expect(err).toBeInstanceOf(EasyconfigError);
 		}
@@ -65,14 +65,9 @@ describe('EasyconfigService without NODE_ENV', () => {
 
 describe('it should work with the logger option', () => {
 	it.each([
-		new Logger(EasyconfigService.name),
-		new OgmaService(
-			new Ogma({ logLevel: 'DEBUG', color: true}),
-			EasyconfigService.name,
-		),
+		new Logger(EasyconfigService.name)
 	])('it should work with any logger', (logger: LoggerService) => {
-		OgmaModule.forRoot(OgmaModule, {});
-		const service = new EasyconfigService({logger, path: '.env.dev', safe: true});
+		const service = new EasyconfigService({ logger, path: '.env.dev', safe: true });
 		expect(service).toBeDefined();
 	});
 });
