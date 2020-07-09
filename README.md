@@ -99,29 +99,51 @@ export class AppController {
 ### Type processing
 Module uses dotenv-parse-variables lib (https://www.npmjs.com/package/dotenv-parse-variables) to process env file.
 Example of type processing:
+Imagine you have a configuration file at `.env` with the following:
 
-```
-    foo=test
-    bar=1
-    baz=true
-    qux=test,1,true,
-    bat=false*,
-    qwe=`1,2,3`,
-    asd=test,1,true*
-```
-will be processed to
-```javascript
-    {
-        foo: 'test',
-        bar: 1,
-        baz: true,
-        qux: ['test', 1, true],
-        bat: 'false',
-        qwe: '1,2,3',
-        asd: ['test', 1, 'true']
-    }
+```bash
+FOO=bar
+BAZ=2
+BEEP=false
+BOOP=some,thing,that,goes,wow
+# note how we use an asterisk here to turn off the parsing for this variable
+BLEEP=false*
+# note how we use an asterisk in the array to turn off parsing for an array key value
+PING=ping,true*,2,100
+# note a string between bacticks won't be parsed
+PONG=`some,thing,that,goes,wow`
 ```
 
+After using this plugin, the environment variables are parsed to their proper types.
+
+To test it out, simply log the returned object in your console:
+
+```js
+console.log(env);
+```
+
+And you'll see that it outputs the properly parsed variable types:
+
+```js
+{
+  // String
+  FOO: 'bar',
+  // Number
+  BAZ: 2,
+  // Boolean
+  BEEP: false,
+  // Array
+  BOOP: [ 'some', 'thing', 'that', 'goes', 'wow' ],
+  // NOTE: this was not parsed due to the * asterisk override above
+  BLEEP: 'false',
+  // NOTE: only the `true*` above was opted out through the use of an asterisk
+  PING: [ 'ping', 'true', 2, 100 ],
+  // NOTE: this was not parsed because the string was between bacticks
+  PONG: 'some,thing,that,goes,wow'
+}
+```
+
+If your configuration line ends in `*` it will not be parsed by this package, which allows you to keep values as the `String` variable type if needed. Also when you encapsulate a value between bacticks e.g. \`value\`, the value won't be parsed and it will return as a `String` variable. This can be used in situations where you for example have a ',' inside your string and it should not be parsed as an array.
 
 ## Contributing
 
