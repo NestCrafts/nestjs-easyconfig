@@ -1,6 +1,8 @@
 # compiled output
 /node_modules
 /dist
+*.js
+*.d.ts
 
 # Logs
 logs
