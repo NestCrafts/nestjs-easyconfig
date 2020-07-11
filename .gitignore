@@ -3,7 +3,7 @@
 /dist
 *.js
 *.d.ts
-
+.eslintcache
 # Logs
 logs
 *.log
