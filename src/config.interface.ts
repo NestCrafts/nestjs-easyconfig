@@ -1,4 +1,6 @@
-import { LoggerService } from '@nestjs/common';
+import {
+	LoggerService
+} from '@nestjs/common';
 
 export interface Config {
 	/**
@@ -9,6 +11,11 @@ export interface Config {
 	 * For example, if the NODE_ENV is `production`, the file `.env.<NODE_ENV>` will load.
 	 */
 	path?: string;
+
+	/**
+	 * path of the file to check the keys against when safe option is set to true.
+	 * Defaults to .env.sample
+	 */
 
 	sampleFilePath?: string;
 
@@ -43,6 +50,14 @@ export interface Config {
 	debug?: boolean;
 
 	/**
+	 * This turns on parse logs which help debug how keys are being parsed.
+	 *
+	 * default : false
+	 */
+
+	parseLog?: boolean;
+
+	/**
 	 * This option lets you specify the encoding of your file containing environment variables.
 	 *
 	 * ```
@@ -51,8 +66,21 @@ export interface Config {
 	encoding?: string;
 
 	/**
-	 * This option allows you to pass in a pre-defined logger instance. The logger must implement the NestJS LoggerService interface
+	 * This option allows you to pass in a pre-defined logger instance. 
+	 * The logger must implement the NestJS LoggerService interface
 	 */
 
 	logger?: LoggerService;
+
+	/**
+	 * This option allows you assign the values to process.env . Defaults to true
+	 */
+
+	assignToProcessEnv?: boolean;
+
+	/**
+	 * This option allows you overide a value on process.env if its alreadt set . Defaults to false
+	 */
+
+	overrideProcessEnv?: boolean;
 }

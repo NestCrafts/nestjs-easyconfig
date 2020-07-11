@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import * as dotenvParseVariables from 'dotenv-parse-variables';
+import dotenvParseVariables from './parseEnv';
 import * as fs from 'fs';
 import { Config } from './config.interface';
 import * as path from 'path';
@@ -75,7 +75,7 @@ export class EasyconfigService {
 				this.safeCheck(Object.keys(this.envConfig), sampleFile);
 			}
 
-			this.envConfig = dotenvParseVariables(this.envConfig);
+			this.envConfig = dotenvParseVariables(this.envConfig, config);
 		} catch (err) {
 			throw new EasyconfigError(err);
 		}
