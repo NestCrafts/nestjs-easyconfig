@@ -4,7 +4,7 @@ src/
 .circleci/*
 .env*
 test/*
-History.md
+VersionHistory.md
 LICENSE
 CONTRIBUTING.md
 .all-contributorsrc

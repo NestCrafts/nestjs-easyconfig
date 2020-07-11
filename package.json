@@ -15,7 +15,7 @@
     "test:watch": "jest --watch",
     "test": "jest --config ./test/jest.json",
     "coverage": "jest --coverage",
-    "changelog": "npx auto-changelog --output CHANGELOG.md --template keepachangelog",
+    "changelog": "npx auto-changelog --output VersionHistory.md --template keepachangelog",
     "coveralls": "yarn run coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [
