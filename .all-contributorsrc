@@ -54,6 +54,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "byteglory",
+      "name": "Rubin shrestha",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/72143629?v=4",
+      "profile": "https://github.com/byteglory",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
