@@ -65,6 +65,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "Aavash",
+      "name": "Aavash Khatri",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/16209762?v=4",
+      "profile": "https://github.com/Aavash",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
