@@ -10,7 +10,6 @@
     "build": "rm -rf ./dist && tsc && npm run build:index",
     "build:index": "rm -rf ./index.js ./index.d.ts && tsc -d --skipLibCheck ./index.ts",
     "format": "prettier --write \"src/**/*.ts\"",
-    "postinstall": "npm run build",
     "lint": "eslint '{src,apps,libs,test}/**/*.ts'",
     "lint-fix": "eslint '{src,apps,libs,test}/**/*.ts' --fix",
     "test:watch": "jest --watch",
