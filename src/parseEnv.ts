@@ -129,9 +129,9 @@ function parseKey(value: any, key: string, options: options) {
 	}
 
 	// Array
-	if (
-		(Array.isArray(value) || typeof value === 'string') &&
-		value.indexOf(',') !== -1
+  if (
+    typeof value.includes === 'function' &&
+    value.includes(',')
 	) {
 		//logger(`key ${key} parsed as an Array`);
 		return value
