@@ -1,6 +1,4 @@
-import {
-	LoggerService
-} from '@nestjs/common';
+import { LoggerService } from '@nestjs/common';
 
 export interface Config {
 	/**
@@ -66,7 +64,7 @@ export interface Config {
 	encoding?: string;
 
 	/**
-	 * This option allows you to pass in a pre-defined logger instance. 
+	 * This option allows you to pass in a pre-defined logger instance.
 	 * The logger must implement the NestJS LoggerService interface
 	 */
 
