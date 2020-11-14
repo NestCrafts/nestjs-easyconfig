@@ -2,19 +2,30 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: enhancement, feature_request
-assignees: rubiin
+labels: ''
+assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+---
+name: "\U0001F680 Feature Request"
+about: "I have a suggestion \U0001F63B!"
+title: ''
+labels: 'type: enhancement :wolf:,needs triage'
+assignees: ''
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+---
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Feature Request
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Is your feature request related to a problem? Please describe.
+<!-- A clear and concise description of what the problem is. Ex. I have an issue when [...] -->
+
+## Describe the solution you'd like
+<!-- A clear and concise description of what you want to happen. Add any considered drawbacks. -->
+
+## Teachability, Documentation, Adoption, Migration Strategy
+<!-- If you can, explain how users will be able to use this and possibly write out a version the docs. Maybe a screenshot or design? -->
+
+## What is the motivation / use case for changing the behavior?
+<!-- Describe the motivation or the concrete use case. -->
