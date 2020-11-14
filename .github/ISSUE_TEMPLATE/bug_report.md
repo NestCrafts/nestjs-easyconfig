@@ -61,9 +61,6 @@ assignees: ''
 ```typescript
 // insert code here
 ```
-
-### My Environment
-
 ## Environment
 
 <pre><code>
