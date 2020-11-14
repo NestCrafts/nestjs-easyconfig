@@ -64,18 +64,19 @@ assignees: ''
 
 ### My Environment
 
-<!--
-  Please add any other relevant dependencies to this table at the end.
-  For example: Electron, React Native, or NestJS.
--->
+## Environment
 
-| Dependency          | Version  |
-| ---                 | ---      |
-| Operating System    |          |
-| Node.js version     | vX.Y.ZZZ | <!-- run `node -v` to obtain this -->
-| Typescript version  | vX.Y.ZZZ | <!-- run `npm list typescript` to obtain this -->
-| Nestjs-easyconfig version     | vX.Y.ZZZ | <!-- run `npm list nestjs-easyconfig` to obtain this -->
+<pre><code>
+Nest version: X.Y.Z
+<!-- Check whether this is still an issue in the most recent Nest version -->
+ 
+For Tooling issues:
+- Node version: XX  <!-- run `node --version` -->
+- Platform:  <!-- Mac, Linux, Windows -->
 
+Others:
+<!-- Anything else relevant?  Operating system version, IDE, package manager, ... -->
+</code></pre>
 
 ### Additional Context
 
