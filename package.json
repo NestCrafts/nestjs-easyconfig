@@ -1,6 +1,6 @@
 {
   "name": "nestjs-easyconfig",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Add configs to nestjs with auto type parsing",
   "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
   "license": "MIT",
@@ -39,10 +39,8 @@
     "@nestjs/testing": "7.5.5",
     "@types/jest": "26.0.15",
     "@typescript-eslint/eslint-plugin": "4.8.2",
-    "@types/node": "14.14.7",
-    "@typescript-eslint/parser": "4.8.2",
     "@types/node": "14.14.10",
-
+    "@typescript-eslint/parser": "4.8.2",
     "eslint": "^7.14.0",
     "husky": "^4.3.0",
     "eslint-config-prettier": "6.15.0",
