@@ -36,7 +36,7 @@
   "devDependencies": {
     "@nestjs/common": "^7.0.13",
     "@nestjs/core": "^7.5.2",
-    "@nestjs/testing": "7.5.2",
+    "@nestjs/testing": "7.5.5",
     "@types/jest": "26.0.15",
     "@typescript-eslint/eslint-plugin": "4.8.2",
     "@types/node": "14.14.7",
