@@ -129,10 +129,7 @@ function parseKey(value: any, key: string, options: options) {
 	}
 
 	// Array
-  if (
-    typeof value.includes === 'function' &&
-    value.includes(',')
-	) {
+	if (typeof value.includes === 'function' && value.includes(',')) {
 		//logger(`key ${key} parsed as an Array`);
 		return value
 			.split(',')

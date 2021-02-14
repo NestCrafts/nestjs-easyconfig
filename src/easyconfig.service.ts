@@ -6,6 +6,12 @@ import * as path from 'path';
 import { Logger, LoggerService } from '@nestjs/common';
 import { EasyconfigError } from './easyconfig.error';
 
+/**
+ *
+ *
+ * @export
+ * @class EasyconfigService
+ */
 export class EasyconfigService {
 	readonly sampleFile: string = '.env.sample';
 
@@ -15,9 +21,30 @@ export class EasyconfigService {
 	constructor(config?: Config) {
 		this.logger = config.logger || new Logger(EasyconfigService.name);
 		this.tryGetConfigFromEnv(config);
-		dotenv.config({ debug: config.debug, encoding: config.encoding });
 	}
 
+	/**
+	 *
+	 *
+	 * @param {Config} config
+	 * @returns {Record<string, any>}
+	 * @memberof EasyconfigService
+	 */
+	returnEnvs(config: Config): Record<string, any> {
+		return dotenv.config({
+			debug: config.debug,
+			encoding: config.encoding,
+			path: config.path,
+		}).parsed;
+	}
+
+	/**
+	 *
+	 *
+	 * @param {string} key
+	 * @returns {string}
+	 * @memberof EasyconfigService
+	 */
 	get(key: string): string {
 		const configExists = key in this.envConfig;
 
@@ -30,9 +57,13 @@ export class EasyconfigService {
 	}
 
 	/**
-	 *  checks whether the used env file missed some keys
+	 *
+	 * checks whether the used env file missed some keys
+	 *
+	 * @param {string[]} userEnvFile
+	 * @param {string} config
+	 * @memberof EasyconfigService
 	 */
-
 	safeCheck(userEnvFile: string[], config: string): void {
 		const src = Object.keys(
 			dotenv.parse(fs.readFileSync(path.resolve(config))),
@@ -51,6 +82,12 @@ export class EasyconfigService {
 		}
 	}
 
+	/**
+	 *
+	 *
+	 * @private
+	 * @memberof EasyconfigService
+	 */
 	private tryGetConfigFromEnv = (config?: Config) => {
 		const sampleFile: string = config.sampleFilePath
 			? path.resolve(config.sampleFilePath)
@@ -58,17 +95,19 @@ export class EasyconfigService {
 
 		try {
 			if (!config.path && process.env.NODE_ENV) {
-				this.envConfig = dotenv.parse(
-					fs.readFileSync(path.resolve(`.env.${process.env.NODE_ENV}`)),
-				);
+				this.envConfig = this.returnEnvs({
+					...config,
+					path: path.resolve(`.env.${process.env.NODE_ENV}`),
+				});
 			} else if (!config.path && !process.env.NODE_ENV) {
 				throw new Error(
 					'Failed to load configs. Either pass file or NODE_ENV :(',
 				);
 			} else {
-				this.envConfig = dotenv.parse(
-					fs.readFileSync(path.resolve(config.path)),
-				);
+				this.envConfig = this.envConfig = this.returnEnvs({
+					...config,
+					path: path.resolve(config.path),
+				});
 			}
 
 			if (config.safe) {
