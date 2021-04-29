@@ -1,0 +1,51 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "23:15"
+  open-pull-requests-limit: 10
+  reviewers:
+  - rubiin
+  assignees:
+  - rubiin
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.21
+    - 26.0.22
+  - dependency-name: "@nestjs/common"
+    versions:
+    - 7.6.11
+    - 7.6.13
+    - 7.6.15
+    - 7.6.8
+  - dependency-name: "@nestjs/core"
+    versions:
+    - 7.6.13
+    - 7.6.15
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - 4.15.0
+    - 4.15.2
+    - 4.17.0
+  - dependency-name: "@nestjs/testing"
+    versions:
+    - 7.6.13
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 8.0.0
+  - dependency-name: husky
+    versions:
+    - 5.0.9
+    - 5.1.1
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.15.0
