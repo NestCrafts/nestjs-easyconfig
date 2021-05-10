@@ -27,7 +27,7 @@
   },
   "bugs": "https://github.com/rubiin/nestjs-easyconfig/issues",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^9.0.2"
   },
   "peerDependencies": {
     "@nestjs/common": ">7.0.0"
