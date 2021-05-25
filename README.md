@@ -4,7 +4,7 @@
  <p float="left">
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/l/nestjs-easyconfig" alt="Package License" /></a>
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/dw/nestjs-easyconfig" alt="NPM Downloads" /></a>
- <a href="https://www.npmjs.com/package/nestjs-pgpromise"><img src="https://github.com/rubiin/nestjs-easyconfig/workflows/CI/badge.svg" alt="CI" /></a> 
+ <a href="https://www.npmjs.com/package/nestjs-pgpromise"><img src="https://github.com/rubiin/nestjs-easyconfig/actions/workflows/github-ci.yml/badge.svg" alt="CI" /></a> 
 <a href=""><img src="https://badgen.net/dependabot/dependabot/dependabot-core/?icon=dependabot" /></a>
 
 </p>
