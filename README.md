@@ -2,7 +2,6 @@
   <a href="http://github.com/rubiin/nest-easyconfigs/" target="blank"><img src="https://i.imgur.com/BvxL0JR.png" width="320" height="200" alt="" /></a>
 </p>
  <p float="left">
-<a href="http://hits.dwyl.com/rubiin/nestjs-easyconfig"><img src="http://hits.dwyl.com/rubiin/nestjs-easyconfig.svg" alt="Hits" /></a>
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/l/nestjs-easyconfig" alt="Package License" /></a>
 <a href="https://www.npmjs.com/package/nestjs-easyconfig"><img src="https://img.shields.io/npm/dw/nestjs-easyconfig" alt="NPM Downloads" /></a>
  <a href="https://www.npmjs.com/package/nestjs-pgpromise"><img src="https://github.com/rubiin/nestjs-easyconfig/workflows/CI/badge.svg" alt="CI" /></a> 
