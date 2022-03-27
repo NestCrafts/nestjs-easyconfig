@@ -10,6 +10,7 @@ export interface Config extends DotenvConfigOptions {
 	 */
 
 	sampleFilePath?: string;
+	expand?: boolean;
 
 	/**
 	 * checks whether the used env file is missing some keys.
@@ -61,7 +62,7 @@ export interface Config extends DotenvConfigOptions {
 
 	/**
 	 *
-	 * This option allows you overide a value on process.env if its alreadt set . Defaults to false
+	 * This option allows you overide a value on process.env if its already set . Defaults to false
 	 *
 	 */
 

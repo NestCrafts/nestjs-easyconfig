@@ -1,4 +1,5 @@
 import * as dotenv from 'dotenv';
+import * as dotenvExpand from 'dotenv-expand';
 import dotenvParseVariables from './parseEnv';
 import * as fs from 'fs';
 import { Config } from './config.interface';
@@ -30,12 +31,18 @@ export class EasyconfigService {
 	 * @returns {Record<string, any>}
 	 * @memberof EasyconfigService
 	 */
-	returnEnvs(config: Config): Record<string, any> {
-		return dotenv.config({
+	returnEnvs(config: Config): Record<string, string> {
+		const thisEnv = dotenv.config({
 			debug: config.debug,
 			encoding: config.encoding,
 			path: config.path,
-		}).parsed;
+		});
+
+		if (config.expand) {
+			return dotenvExpand.expand(thisEnv).parsed;
+		}
+
+		return thisEnv.parsed;
 	}
 
 	/**
@@ -104,7 +111,7 @@ export class EasyconfigService {
 					'Failed to load configs. Either pass file or NODE_ENV :(',
 				);
 			} else {
-				this.envConfig = this.envConfig = this.returnEnvs({
+				this.envConfig = this.returnEnvs({
 					...config,
 					path: path.resolve(config.path),
 				});
