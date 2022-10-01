@@ -10,6 +10,15 @@ export interface Config extends DotenvConfigOptions {
 	 */
 
 	sampleFilePath?: string;
+	
+	/**
+	 *
+	 * whether to expand the variables or not 
+	 * Defaults to false
+	 *
+	 */
+	
+	
 	expand?: boolean;
 
 	/**

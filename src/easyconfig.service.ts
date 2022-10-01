@@ -32,17 +32,17 @@ export class EasyconfigService {
 	 * @memberof EasyconfigService
 	 */
 	returnEnvs(config: Config): Record<string, string> {
-		const thisEnv = dotenv.config({
+		const env = dotenv.config({
 			debug: config.debug,
 			encoding: config.encoding,
 			path: config.path,
 		});
-
-		if (config.expand) {
-			return dotenvExpand.expand(thisEnv).parsed;
+		
+		if (config?.expand) {
+			return dotenvExpand.expand(env).parsed;
 		}
 
-		return thisEnv.parsed;
+		return env.parsed;
 	}
 
 	/**
@@ -82,7 +82,7 @@ export class EasyconfigService {
 
 		if (missingKeys.length !== 0) {
 			this.logger
-				.error(`MissingEnvVarsError: ${missingKeys} were defined in .env.example but are not present in the environment:
+				.error(`MissingEnvVarsError: ${missingKeys.join(",")} were defined in .env.example but are not present in the environment:
         This may cause the app to misbehave.`);
 		} else {
 			this.logger.debug('Config looks good :) ');
