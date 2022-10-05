@@ -77,10 +77,16 @@ describe('EasyconfigService with expand true', () => {
 		expect(service.get('ARR')).toEqual([1, 'foo', true, false]);
 	});
 
+	it('should be return expanded string', () => {
+		expect(service.get('MONGODB_URI')).toEqual(
+			'mongodb://testuser:testpassword@localhost:27017/my-mongodb-server',
+		);
+	});
+
 	it('should throw error when something goes wrong', () => {
 		try {
 			const anotherService: EasyconfigService = new EasyconfigService({
-				path: '.env.dev',
+				path: '.env.expand',
 				safe: true,
 			});
 
@@ -93,11 +99,7 @@ describe('EasyconfigService with expand true', () => {
 		expect(service.get('DB_PASS')).toEqual('s1mpl3');
 	});
 
-	it('should be return string', () => {
-		expect(service.get('MONGODB_URI')).toEqual(
-			'mongodb://testuser:testpassword@localhost:27017/my-mongodb-server',
-		);
-	});
+
 });
 
 describe('EasyconfigService with NODE_ENV', () => {
