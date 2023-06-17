@@ -8,6 +8,7 @@
 	"scripts": {
 		"commit": "npx cz",
 		"build": "rm -rf ./dist && tsc",
+		"postinstall": "npm run  build",
 		"format": "prettier --write \"src/**/*.ts\"",
 		"lint": "eslint '{src,apps,libs,test}/**/*.ts'",
 		"lint-fix": "eslint '{src,apps,libs,test}/**/*.ts' --fix",

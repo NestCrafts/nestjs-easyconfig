@@ -1,9 +1,9 @@
 import * as dotenv from 'dotenv';
 import * as dotenvExpand from 'dotenv-expand';
 import dotenvParseVariables from './parseEnv';
-import * as fs from 'fs';
+import {readFileSync} from 'fs';
 import { Config } from './config.interface';
-import * as path from 'path';
+import {resolve} from 'path';
 import { Logger, LoggerService } from '@nestjs/common';
 import { EasyconfigError } from './easyconfig.error';
 
@@ -37,7 +37,7 @@ export class EasyconfigService {
 			encoding: config.encoding,
 			path: config.path,
 		});
-		
+
 		if (config?.expand) {
 			return dotenvExpand.expand(env).parsed;
 		}
@@ -73,7 +73,7 @@ export class EasyconfigService {
 	 */
 	safeCheck(userEnvFile: string[], config: string): void {
 		const src = Object.keys(
-			dotenv.parse(fs.readFileSync(path.resolve(config))),
+			dotenv.parse(readFileSync(resolve(config))),
 		);
 
 		const missingKeys = src
@@ -97,24 +97,28 @@ export class EasyconfigService {
 	 */
 	private tryGetConfigFromEnv = (config?: Config) => {
 		const sampleFile: string = config.sampleFilePath
-			? path.resolve(config.sampleFilePath)
+			? resolve(config.sampleFilePath)
 			: this.sampleFile;
 
 		try {
 			if (!config.path && process.env.NODE_ENV) {
 				this.envConfig = this.returnEnvs({
 					...config,
-					path: path.resolve(`.env.${process.env.NODE_ENV}`),
+					path: resolve(`.env.${process.env.NODE_ENV}`),
 				});
 			} else if (!config.path && !process.env.NODE_ENV) {
 				throw new Error(
 					'Failed to load configs. Either pass file or NODE_ENV :(',
 				);
 			} else {
-				this.envConfig = this.returnEnvs({
-					...config,
-					path: path.resolve(config.path),
-				});
+				if(config.path) {
+
+					this.envConfig = this.returnEnvs({
+						...config,
+						path: resolve(config.path as string),
+					});
+
+				}
 			}
 
 			if (config.safe) {
