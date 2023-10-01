@@ -1,11 +1,12 @@
-import * as dotenv from 'dotenv';
-import * as dotenvExpand from 'dotenv-expand';
-import dotenvParseVariables from './parseEnv';
-import {readFileSync} from 'fs';
-import { Config } from './config.interface';
-import {resolve} from 'path';
-import { Logger, LoggerService } from '@nestjs/common';
-import { EasyconfigError } from './easyconfig.error';
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import * as dotenv from "dotenv";
+import * as dotenvExpand from "dotenv-expand";
+import type { LoggerService } from "@nestjs/common";
+import { Logger } from "@nestjs/common";
+import dotenvParseVariables from "./parseEnvironment";
+import type { Config } from "./config.interface";
+import { EasyconfigError } from "./easyconfig.error";
 
 /**
  *
@@ -14,120 +15,119 @@ import { EasyconfigError } from './easyconfig.error';
  * @class EasyconfigService
  */
 export class EasyconfigService {
-	readonly sampleFile: string = '.env.sample';
+  readonly sampleFile: string = ".env.sample";
 
-	private envConfig: { [key: string]: string };
-	private readonly logger: LoggerService;
+  private envConfig: { [key: string]: string };
+  private readonly logger: LoggerService;
 
-	constructor(config?: Config) {
-		this.logger = config.logger || new Logger(EasyconfigService.name);
-		this.tryGetConfigFromEnv(config);
-	}
+  constructor(config?: Config) {
+    this.logger = config.logger || new Logger(EasyconfigService.name);
+    this.tryGetConfigFromEnv(config);
+  }
 
-	/**
-	 *
-	 *
-	 * @param {Config} config
-	 * @returns {Record<string, any>}
-	 * @memberof EasyconfigService
-	 */
-	returnEnvs(config: Config): Record<string, string> {
-		const env = dotenv.config({
-			debug: config.debug,
-			encoding: config.encoding,
-			path: config.path,
-		});
+  /**
+   *
+   * @param {Config} config
+   * @memberof EasyconfigService
+   * @returns {Record<string, any>} - parsed env variables
+   */
+  returnEnvs(config: Config): Record<string, string> {
+    const environment = dotenv.config({
+      debug: config.debug,
+      encoding: config.encoding,
+      path: config.path,
+    });
 
-		if (config?.expand) {
-			return dotenvExpand.expand(env).parsed;
-		}
+    if (config?.expand)
+      return dotenvExpand.expand(environment).parsed;
 
-		return env.parsed;
-	}
+    return environment.parsed;
+  }
 
-	/**
-	 *
-	 *
-	 * @param {string} key
-	 * @returns {string}
-	 * @memberof EasyconfigService
-	 */
-	get(key: string): string {
-		const configExists = key in this.envConfig;
 
-		if (!configExists) {
-			this.logger.warn('The key was not found in config file 😕');
-			return;
-		}
+/**
+ * The function retrieves a value from the environment configuration based on a given key.
+ * @param {string} key - A string representing the key to retrieve from the environment configuration.
+ * @returns The value associated with the given key in the `envConfig` object.
+ */
+  get(key: string): string {
+    const configExists = key in this.envConfig;
 
-		return this.envConfig[key];
-	}
+    if (!configExists) {
+      this.logger.warn("The key was not found in config file 😕");
+      return;
+    }
 
-	/**
-	 *
-	 * checks whether the used env file missed some keys
-	 *
-	 * @param {string[]} userEnvFile
-	 * @param {string} config
-	 * @memberof EasyconfigService
-	 */
-	safeCheck(userEnvFile: string[], config: string): void {
-		const src = Object.keys(
-			dotenv.parse(readFileSync(resolve(config))),
-		);
+    return this.envConfig[key];
+  }
 
-		const missingKeys = src
-			.filter(x => !userEnvFile.includes(x))
-			.concat(userEnvFile.filter(x => !src.includes(x)));
+  /**
+   *
+   * checks whether the used env file missed some keys
+   *
+   * @param {string[]} userEnvironmentFile
+   * @param {string} config
+   * @memberof EasyconfigService
+   */
+  safeCheck(userEnvironmentFile: string[], config: string): void {
+    const source = Object.keys(
+      dotenv.parse(readFileSync(resolve(config))),
+    );
 
-		if (missingKeys.length !== 0) {
-			this.logger
-				.error(`MissingEnvVarsError: ${missingKeys.join(",")} were defined in .env.example but are not present in the environment:
+    const missingKeys = source
+      .filter(x => !userEnvironmentFile.includes(x))
+      .concat(userEnvironmentFile.filter(x => !source.includes(x)));
+
+    if (missingKeys.length !== 0) {
+      this.logger
+        .error(`MissingEnvVarsError: ${missingKeys.join(",")} were defined in .env.example but are not present in the environment:
         This may cause the app to misbehave.`);
-		} else {
-			this.logger.debug('Config looks good :) ');
-		}
-	}
+    }
+    else {
+      this.logger.debug("Config looks good :) ");
+    }
+  }
 
-	/**
-	 *
-	 *
-	 * @private
-	 * @memberof EasyconfigService
-	 */
-	private tryGetConfigFromEnv = (config?: Config) => {
-		const sampleFile: string = config.sampleFilePath
-			? resolve(config.sampleFilePath)
-			: this.sampleFile;
+  /**
+   *
+   *
+   * @private
+   * @memberof EasyconfigService
+   */
+  private tryGetConfigFromEnv = (config?: Config) => {
+    const sampleFile: string = config.sampleFilePath
+      ? resolve(config.sampleFilePath)
+      : this.sampleFile;
 
-		try {
-			if (!config.path && process.env.NODE_ENV) {
-				this.envConfig = this.returnEnvs({
-					...config,
-					path: resolve(`.env.${process.env.NODE_ENV}`),
-				});
-			} else if (!config.path && !process.env.NODE_ENV) {
-				throw new Error(
-					'Failed to load configs. Either pass file or NODE_ENV :(',
-				);
-			} else {
-				if(config.path) {
+    try {
+      if (!config.path && process.env.NODE_ENV) {
+        this.envConfig = this.returnEnvs({
+          ...config,
+          path: resolve(`.env.${process.env.NODE_ENV}`),
+        });
+      }
+      else if (!config.path && !process.env.NODE_ENV) {
+        throw new Error(
+          "Failed to load configs. Either pass file or NODE_ENV :(",
+        );
+      }
+      else {
+        if (config.path) {
+          this.envConfig = this.returnEnvs({
+            ...config,
+            path: resolve(config.path as string),
+          });
+        }
+      }
 
-					this.envConfig = this.returnEnvs({
-						...config,
-						path: resolve(config.path as string),
-					});
+      if (config.safe)
+        this.safeCheck(Object.keys(this.envConfig), sampleFile);
 
-				}
-			}
-
-			if (config.safe) {
-				this.safeCheck(Object.keys(this.envConfig), sampleFile);
-			}
-
-			this.envConfig = dotenvParseVariables(this.envConfig, config);
-		} catch (err) {
-			throw new EasyconfigError(err);
-		}
-	};
+      this.envConfig = dotenvParseVariables(this.envConfig, config);
+    }
+    catch (error) {
+      if(error instanceof Error)
+      throw new EasyconfigError(error);
+    }
+  };
 }
