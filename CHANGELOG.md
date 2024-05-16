@@ -2,13 +2,6 @@
 
 ## [2.6.0](https://github.com/rubiin/nestjs-easyconfig/compare/2.5.0...v2.6.0) (2024-04-30)
 
-
-### Features
-
-* upgrade to nestjs 10 ([a196bc2](https://github.com/rubiin/nestjs-easyconfig/commit/a196bc207ce9b286ce0fed50acfbefe9f68dde58))
-* upgrade to nestjs 10 ([6012ed6](https://github.com/rubiin/nestjs-easyconfig/commit/6012ed6a659fe03a93a071b92a180c3f0cd4c165))
-
-
 ### Bug Fixes
 
 * **bump:** version bump ([4b1d037](https://github.com/rubiin/nestjs-easyconfig/commit/4b1d0374f4dbc02b95072b420a2c5c84347c6820))
