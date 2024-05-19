@@ -1,0 +1,14 @@
+queue_rules:
+  - name: renovate
+    conditions:
+      - author=renovate[bot]
+      - status-success=build
+
+pull_request_rules:
+  - name: merge pull requests from renovate bot if CI passes
+    conditions:
+      - author=renovate[bot]
+      - status-success=build
+    actions:
+      queue:
+        name: renovate
