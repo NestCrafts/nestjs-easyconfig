@@ -1,6 +1,6 @@
 {
 	"name": "nestjs-easyconfig",
-	"version": "2.8.0",
+	"version": "2.8.1",
 	"description": "Add configs to nestjs with auto type parsing",
 	"keywords": [
 		"config",
@@ -14,11 +14,14 @@
 		"type": "git",
 		"url": "https://github.com/rubiin/nestjs-easyconfig"
 	},
-	"main": "dist/index.js",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
-		"commit": "npx cz",
-		"build": "rimraf ./dist && tsc -p tsconfig.build.json",
-		"postinstall": "npm run  build",
+		"build": "npx rimraf dist tsconfig.build.tsbuildinfo && tsc -p tsconfig.build.json",
+		"prepack": "npm run build",
 		"format": "oxfmt",
 		"format:check": "oxfmt --check **/*.ts",
 		"lint": "oxlint",
