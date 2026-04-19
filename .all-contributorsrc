@@ -1,87 +1,62 @@
 {
-  "files": [
-    "README.md"
-  ],
-  "imageSize": 100,
-  "commit": false,
-  "contributors": [
-    {
-      "login": "dlukanin",
-      "name": "Dmitry Lukanin",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/875405?v=4",
-      "profile": "https://github.com/dlukanin",
-      "contributions": [
-        "infra",
-        "test",
-        "code"
-      ]
-    },
-    {
-      "login": "bradtaniguchi",
-      "name": "Brad",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/10079147?v=4",
-      "profile": "https://github.com/bradtaniguchi",
-      "contributions": [
-        "infra",
-        "code"
-      ]
-    },
-    {
-      "login": "andrasbacsai",
-      "name": "Andras Bacsai",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/5845193?v=4",
-      "profile": "https://coollabs.io",
-      "contributions": [
-        "infra"
-      ]
-    },
-    {
-      "login": "genu",
-      "name": "Eugen Istoc",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/928780?v=4",
-      "profile": "http://www.eugenistoc.com",
-      "contributions": [
-        "test",
-        "code"
-      ]
-    },
-    {
-      "login": "jmcdo29",
-      "name": "Jay McDoniel",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/28268680?v=4",
-      "profile": "https://github.com/jmcdo29",
-      "contributions": [
-        "test",
-        "code"
-      ]
-    },
-    {
-      "login": "byteglory",
-      "name": "Rubin shrestha",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/72143629?v=4",
-      "profile": "https://github.com/byteglory",
-      "contributions": [
-        "infra",
-        "test",
-        "code"
-      ]
-    },
-    {
-      "login": "Aavash",
-      "name": "Aavash Khatri",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/16209762?v=4",
-      "profile": "https://github.com/Aavash",
-      "contributions": [
-        "infra",
-        "test",
-        "code"
-      ]
-    }
-  ],
-  "contributorsPerLine": 7,
-  "projectName": "nestjs-easyconfig",
-  "projectOwner": "rubiin",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "skipCi": true
+	"files": ["README.md"],
+	"imageSize": 100,
+	"commit": false,
+	"contributors": [
+		{
+			"login": "dlukanin",
+			"name": "Dmitry Lukanin",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/875405?v=4",
+			"profile": "https://github.com/dlukanin",
+			"contributions": ["infra", "test", "code"]
+		},
+		{
+			"login": "bradtaniguchi",
+			"name": "Brad",
+			"avatar_url": "https://avatars3.githubusercontent.com/u/10079147?v=4",
+			"profile": "https://github.com/bradtaniguchi",
+			"contributions": ["infra", "code"]
+		},
+		{
+			"login": "andrasbacsai",
+			"name": "Andras Bacsai",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/5845193?v=4",
+			"profile": "https://coollabs.io",
+			"contributions": ["infra"]
+		},
+		{
+			"login": "genu",
+			"name": "Eugen Istoc",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/928780?v=4",
+			"profile": "http://www.eugenistoc.com",
+			"contributions": ["test", "code"]
+		},
+		{
+			"login": "jmcdo29",
+			"name": "Jay McDoniel",
+			"avatar_url": "https://avatars3.githubusercontent.com/u/28268680?v=4",
+			"profile": "https://github.com/jmcdo29",
+			"contributions": ["test", "code"]
+		},
+		{
+			"login": "byteglory",
+			"name": "Rubin shrestha",
+			"avatar_url": "https://avatars3.githubusercontent.com/u/72143629?v=4",
+			"profile": "https://github.com/byteglory",
+			"contributions": ["infra", "test", "code"]
+		},
+		{
+			"login": "Aavash",
+			"name": "Aavash Khatri",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/16209762?v=4",
+			"profile": "https://github.com/Aavash",
+			"contributions": ["infra", "test", "code"]
+		}
+	],
+	"contributorsPerLine": 7,
+	"projectName": "nestjs-easyconfig",
+	"projectOwner": "rubiin",
+	"repoType": "github",
+	"repoHost": "https://github.com",
+	"skipCi": true
 }

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Logger } from '@nestjs/common';
 
 const DEFAULT_OPTIONS = {
@@ -14,6 +13,8 @@ interface options {
 	parseLog?: boolean;
 	ignoreFunctions?: boolean;
 }
+
+type ParseOptions = Required<options>;
 
 function logger(msg: string, parseLog: boolean) {
 	if (parseLog) {
@@ -55,10 +56,10 @@ function isSANB(val: any): boolean {
 export default (
 	env: { [key: string]: string },
 	options: options = DEFAULT_OPTIONS,
-): { [key: string]: string } => {
-	const envOptions = { ...DEFAULT_OPTIONS, ...(options || {}) };
+): { [key: string]: any } => {
+	const envOptions: ParseOptions = { ...DEFAULT_OPTIONS, ...options };
 
-	const parsed = {};
+	const parsed: Record<string, any> = {};
 
 	for (const key of Object.keys(env)) {
 		// logger(`key "${key}" before type was ${typeof env[key]}`,	envOptions.parseLog );
@@ -69,10 +70,7 @@ export default (
 			}
 
 			parsed[key] = parseKey(env[key], key, envOptions);
-			// logger(
-			// 	`key "${key}" after type was ${typeof parsed[key]}`,
-			// 	envOptions.parseLog,
-			// );
+
 			if (envOptions.assignToProcessEnv === true) {
 				if (envOptions.overrideProcessEnv === true) {
 					process.env[key] = parsed[key] || process.env[key];
@@ -86,7 +84,7 @@ export default (
 	return parsed;
 };
 
-function parseKey(value: any, key: string, options: options) {
+function parseKey(value: any, key: string, options: ParseOptions) {
 	logger(`parsing key ${key} with value ${value}`, options.parseLog);
 
 	// if the value is wrapped in bacticks e.g. (`value`) then just return its value
@@ -94,10 +92,7 @@ function parseKey(value: any, key: string, options: options) {
 		value.toString().indexOf('`') === 0 &&
 		value.toString().lastIndexOf('`') === value.toString().length - 1
 	) {
-		logger(
-			`key ${key} is wrapped in bacticks and will be ignored from parsing`,
-			options.parseLog,
-		);
+		logger(`key ${key} is wrapped in bacticks and will be ignored from parsing`, options.parseLog);
 		return value.toString().substring(1, value.toString().length - 1);
 	}
 
@@ -106,18 +101,12 @@ function parseKey(value: any, key: string, options: options) {
 		value.toString().lastIndexOf('*') === value.toString().length - 1 &&
 		value.toString().indexOf(',') === -1
 	) {
-		logger(
-			`key ${key} ended in * and will be ignored from parsing`,
-			options.parseLog,
-		);
+		logger(`key ${key} ended in * and will be ignored from parsing`, options.parseLog);
 		return value.toString().substring(0, value.toString().length - 1);
 	}
 
 	// Boolean
-	if (
-		value.toString().toLowerCase() === 'true' ||
-		value.toString().toLowerCase() === 'false'
-	) {
+	if (value.toString().toLowerCase() === 'true' || value.toString().toLowerCase() === 'false') {
 		logger(`key ${key} parsed as a Boolean`, options.parseLog);
 		return value.toString().toLowerCase() === 'true';
 	}

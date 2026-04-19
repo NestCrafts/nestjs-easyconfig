@@ -1,23 +1,12 @@
 {
-  "compilerOptions": {
-    "target": "ES2021",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noLib": false,
-    "module": "commonjs",
-    "rootDir": "./src",
-    "baseUrl": "./",
-    "declaration": true,
-    "sourceMap": false,
-    "outDir": "./dist",
-    "removeComments": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true
-  },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"extends": "@rubiin/tsconfig",
+	"compilerOptions": {
+		"sourceMap": false,
+		"newLine": "lf",
+		"module": "nodenext",
+		"types": ["node"], // @types are no longer auto-discovered (see §1.6)
+		"rootDir": "./src" // no longer inferred from source files (see §1.5)
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
 }
