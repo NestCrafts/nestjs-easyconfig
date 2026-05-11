@@ -1,0 +1,8 @@
+
+# hoisting behavior
+hoist: true
+shamefullyHoist: true
+
+# dependency behavior
+dedupeDirectDeps: true
+legacyPeerDeps: true
