@@ -1,6 +1,7 @@
 import { EasyconfigService } from '../../src/easyconfig.service';
 import { EasyconfigError } from '../../src/easyconfig.error';
 import { Logger, LoggerService } from '@nestjs/common';
+import {describe, it, expect} from "vitest";
 
 describe('EasyconfigService', () => {
 	const service: EasyconfigService = new EasyconfigService({
