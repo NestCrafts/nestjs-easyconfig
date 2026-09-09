@@ -1,25 +1,15 @@
 {
-	"extends": "@rubiin/tsconfig/configs/tsconfig.nest.json",
-	"compilerOptions": {
-		"sourceMap": true,
-		"newLine": "lf",
-		"lib": [
-			"ES2022"
-		],
-		"declaration": true,
-		"target": "ES2022",
-		"declarationMap": true,
-		"rootDir": "./src",
-		"types": [
-			"vitest/globals",
-			"node"
-		]
-	},
-	"include": [
-		"src/**/*"
-	],
-	"exclude": [
-		"node_modules",
-		"tests/*.spec.ts"
-	]
+  "extends": "@rubiin/tsconfig/configs/tsconfig.nest.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "newLine": "lf",
+    "lib": ["ES2022"],
+    "declaration": true,
+    "target": "ES2022",
+    "declarationMap": true,
+    "rootDir": "./src",
+    "types": ["vitest/globals", "node"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "tests/*.spec.ts"]
 }

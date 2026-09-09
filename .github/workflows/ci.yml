@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24.x
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - run: pnpm install --shamefully-hoist=true
       - run: pnpm format:check
