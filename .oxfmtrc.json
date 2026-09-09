@@ -23,6 +23,7 @@
     "pnpm-workspace.yaml",
     "README.md",
     "LICENSE*",
-    "dist"
+    "dist",
+	"out"
   ]
 }
