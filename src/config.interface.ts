@@ -1,5 +1,5 @@
-import { LoggerService } from '@nestjs/common'
-import { DotenvConfigOptions } from 'dotenv'
+import { LoggerService } from '@nestjs/common';
+import { DotenvConfigOptions } from 'dotenv';
 
 export interface Config extends DotenvConfigOptions {
   /**
@@ -9,7 +9,7 @@ export interface Config extends DotenvConfigOptions {
    *
    */
 
-  sampleFilePath?: string
+  sampleFilePath?: string;
 
   /**
    *
@@ -18,7 +18,7 @@ export interface Config extends DotenvConfigOptions {
    *
    */
 
-  expand?: boolean
+  expand?: boolean;
 
   /**
    * checks whether the used env file is missing some keys.
@@ -41,7 +41,7 @@ export interface Config extends DotenvConfigOptions {
    * ```
    */
 
-  safe?: boolean
+  safe?: boolean;
 
   /**
    * This turns on parse logs which help debug how keys are being parsed.
@@ -49,7 +49,7 @@ export interface Config extends DotenvConfigOptions {
    * default : false
    */
 
-  parseLog?: boolean
+  parseLog?: boolean;
 
   /**
    *
@@ -58,7 +58,7 @@ export interface Config extends DotenvConfigOptions {
    *
    */
 
-  logger?: LoggerService
+  logger?: LoggerService;
 
   /**
    *
@@ -66,7 +66,7 @@ export interface Config extends DotenvConfigOptions {
    *
    */
 
-  assignToProcessEnv?: boolean
+  assignToProcessEnv?: boolean;
 
   /**
    *
@@ -74,5 +74,5 @@ export interface Config extends DotenvConfigOptions {
    *
    */
 
-  overrideProcessEnv?: boolean
+  overrideProcessEnv?: boolean;
 }

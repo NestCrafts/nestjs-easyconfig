@@ -1,6 +1,6 @@
-import { Module, DynamicModule, Global } from '@nestjs/common'
-import { EasyconfigService } from './easyconfig.service'
-import { Config } from './config.interface'
+import { Module, DynamicModule, Global } from '@nestjs/common';
+import { EasyconfigService } from './easyconfig.service';
+import { Config } from './config.interface';
 
 @Global()
 @Module({})
@@ -15,6 +15,6 @@ export class EasyconfigModule {
         },
       ],
       exports: [EasyconfigService],
-    }
+    };
   }
 }
